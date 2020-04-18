@@ -1,0 +1,14 @@
+{
+    "name": "Exos",
+    "references": [
+        "ExosSDKUtility",
+        "ExosSDK",
+        "ExosUtility",
+        "ExosCore",
+        "exiii.Unity.LinqToGameObject"
+    ],
+    "optionalUnityReferences": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false
+}

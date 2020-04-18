@@ -1,0 +1,86 @@
+﻿#pragma kernel ClosestPointOnTriangleToPoint
+
+RWStructuredBuffer<int> nearTris;
+RWStructuredBuffer<float3> vertexs;
+float4 pt;
+
+RWStructuredBuffer<float3> results;
+
+float Vec3Dot(float3 vec1, float3 vec2)
+{
+    return vec1.x * vec2.x + vec1.y * vec2.y + vec1.z * vec2.z;
+}
+
+[numthreads(1, 1, 1)]
+void ClosestPointOnTriangleToPoint(uint id : SV_DispatchThreadID)
+{
+    int triOff = nearTris[id] * 3;
+
+    float3 a = vertexs[triOff];
+    float3 b = vertexs[triOff + 1];
+    float3 c = vertexs[triOff + 2];
+
+    float3 ab = b - a;
+    float3 ac = c - a;
+    float3 ap = pt.xyz - a;
+
+    float d1 = Vec3Dot(ab, ap);
+    float d2 = Vec3Dot(ac, ap);
+
+    if(d1 <= 0.0 && d2 <= 0.0)
+    {
+        results[id] = a;
+        return;
+    }
+
+    float3 bp = pt.xyz - b;
+    float d3 = Vec3Dot(ab, bp);
+    float d4 = Vec3Dot(ac, bp);
+
+    if(d3 >= 0.0 && d4 <= d3)
+    {
+        results[id] = b;
+        return;
+    }
+
+    float vc = d1 * d4 - d3 * d2;
+    if(vc <= 0.0 && d1 >= 0.0 && d3 <= 0.0)
+    {
+        float v = d1 / (d1 - d3);
+        results[id] = a + v * ab;
+        return;
+    }
+
+    float3 cp = pt.xyz - c;
+    float d5 = Vec3Dot(ab, cp);
+    float d6 = Vec3Dot(ac, cp);
+
+    if(d6 >= 0.0, d5 <= d6)
+    {
+        results[id] = c;
+        return;
+    }
+
+    float vb = d5 * d2 - d1 * d6;
+
+    if(vb <= 0.0 && d2 >= 0.0 && d6 <= 0.0)
+    {
+        float w = d2 / (d2 - d6);
+        results[id] = a + w * ac;
+        return;
+    }
+
+    float va = d3 * d6 - d5 * d4;
+
+    if(va <= 0.0 && (d4 - d3) >= 0.0 && (d5 - d6) >= 0.0)
+    {
+        float w = (d4 - d3) / ((d4 - d3) + (d5 - d6));
+        results[id] = b + w * (c - b);
+        return;
+    }
+
+    float denom = 1.0 / (va + vb + vc);
+    float v2 = vb * denom;
+    float w2 = vc * denom;
+    results[id] = a + ab * v2 + ac * w2;
+}

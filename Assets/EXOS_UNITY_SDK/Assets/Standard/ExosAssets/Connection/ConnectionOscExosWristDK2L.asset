@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a474041bcb5850845a21995e3bd26e50, type: 3}
+  m_Name: ConnectionOscExosWristDK2L
+  m_EditorClassIdentifier: 
+  m_ExName: ConnectionOscExosWristDK2L
+  m_IsActive: 0
+  m_ConnectionEnabled: 1
+  m_ControlTimeout: 1000
+  m_DataTimeout: 200
+  m_RetryNumber: 3
+  m_DebugLog: 1
+  m_HostIPAddress: 
+  m_AutoDetection: 1
+  m_HostIPAddressList: []
+  m_HostIPAddressDetected: 192.168.216.2
+  m_DeviceIPAddress: 192.168.216.1
+  m_DeviceSubnetMask: 255.255.255.0
+  m_DeviceControlPort: 50194
+  m_LocalDataPort: 0

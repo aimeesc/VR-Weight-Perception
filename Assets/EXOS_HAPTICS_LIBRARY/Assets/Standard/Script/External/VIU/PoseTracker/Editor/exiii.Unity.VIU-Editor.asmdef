@@ -1,0 +1,12 @@
+{
+    "name": "exiii.Unity.VIU-Editor",
+    "references": [
+        "exiii.Unity.VIU"
+    ],
+    "optionalUnityReferences": [],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false
+}

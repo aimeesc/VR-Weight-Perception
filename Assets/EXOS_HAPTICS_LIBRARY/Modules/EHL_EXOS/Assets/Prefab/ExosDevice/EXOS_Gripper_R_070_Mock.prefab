@@ -1,0 +1,90 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1669829513803568}
+  m_IsPrefabParent: 1
+--- !u!1 &1669829513803568
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4172436553145798}
+  - component: {fileID: 114474780952592220}
+  - component: {fileID: 114554539939472114}
+  m_Layer: 0
+  m_Name: EXOS_Gripper_R_070_Mock
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4172436553145798
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1669829513803568}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.3, y: 1.3, z: -0.2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114474780952592220
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1669829513803568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d96f48361347df94d994c17461711c67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ExName: EXOS_Gripper_R_070_Mock
+  m_RootObject: {fileID: 0}
+  m_IsActive: 0
+  m_DetectionType: 0
+  m_Colliders: []
+  m_AutoSearchColliders: 1
+  m_ApplyListType: 1
+  m_ApplyList: 
+  m_Children: []
+  m_Oppsites: []
+  m_ExosPrefabs: []
+  m_TrackerParameter:
+    m_TrackingType: 1
+    m_TrackingPosition: 0
+    m_LRType: 0
+  m_PositionUpdateOnUpdate: 1
+  m_ManipulatorInChildren: []
+  m_PrefabInChildren: []
+--- !u!114 &114554539939472114
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1669829513803568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab49d6087c8319843bae08a46b552bc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UniqueID: 61102598-bc65-4c63-b1d0-1331ac85eaa3
+  m_Prefabs:
+  - {fileID: 1957458350693594, guid: 5a8603e4b5fd3ad4e8c8a9d5df7a6067, type: 2}
+  - {fileID: 1888735384382930, guid: 7317acad588df2f4f81a9f2656849a77, type: 2}
+  m_PrefabSets: []
+  m_Tags: []
+  m_LayerRecursive: 1

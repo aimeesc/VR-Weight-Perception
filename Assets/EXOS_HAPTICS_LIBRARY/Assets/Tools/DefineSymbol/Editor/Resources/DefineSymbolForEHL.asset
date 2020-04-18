@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 2105860584, guid: ad482946cc25b6c4cafd7053ec50024c, type: 3}
+  m_Name: DefineSymbolForEHL
+  m_EditorClassIdentifier: 
+  m_Include:
+  - EHL_0_1_0_OR_NEWER
+  - EHL_0_1_1_OR_NEWER
+  - EHL_0_1_2_OR_NEWER
+  - EHL_0_2_0_OR_NEWER
+  m_Exclude: []

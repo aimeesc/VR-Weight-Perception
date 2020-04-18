@@ -1,0 +1,184 @@
+fileFormatVersion: 2
+guid: 2818ea4814cb0614e8ab7c6ce6743356
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Body1
+    100002: Body2
+    100004: Body3
+    100006: Body4
+    100008: Body5
+    100010: Body6
+    100012: Body7
+    100014: Body8
+    100016: Body9
+    100018: //RootNode
+    100020: exiii_3DLogo_preview.000
+    100022: exiii_3DLogo_preview.001
+    100024: exiii_3DLogo_preview.002
+    100026: exiii_3DLogo_preview.003
+    100028: exiii_3DLogo_preview.004
+    100030: exiii_3DLogo_preview.005
+    100032: exiii_3DLogo_preview.006
+    100034: exiii_3DLogo_preview.007
+    100036: exiii_3DLogo_preview.008
+    400000: Body1
+    400002: Body2
+    400004: Body3
+    400006: Body4
+    400008: Body5
+    400010: Body6
+    400012: Body7
+    400014: Body8
+    400016: Body9
+    400018: //RootNode
+    400020: exiii_3DLogo_preview.000
+    400022: exiii_3DLogo_preview.001
+    400024: exiii_3DLogo_preview.002
+    400026: exiii_3DLogo_preview.003
+    400028: exiii_3DLogo_preview.004
+    400030: exiii_3DLogo_preview.005
+    400032: exiii_3DLogo_preview.006
+    400034: exiii_3DLogo_preview.007
+    400036: exiii_3DLogo_preview.008
+    2100000: Steel - Satin
+    2100002: Steel - Satin.001
+    2100004: Steel - Satin.002
+    2100006: Steel - Satin.003
+    2100008: No Name
+    2300000: Body1
+    2300002: Body2
+    2300004: Body3
+    2300006: Body4
+    2300008: Body5
+    2300010: Body6
+    2300012: Body7
+    2300014: Body8
+    2300016: Body9
+    2300018: exiii_3DLogo_preview.000
+    2300020: exiii_3DLogo_preview.001
+    2300022: exiii_3DLogo_preview.002
+    2300024: exiii_3DLogo_preview.003
+    2300026: exiii_3DLogo_preview.004
+    2300028: exiii_3DLogo_preview.005
+    2300030: exiii_3DLogo_preview.006
+    2300032: exiii_3DLogo_preview.007
+    2300034: exiii_3DLogo_preview.008
+    3300000: Body1
+    3300002: Body2
+    3300004: Body3
+    3300006: Body4
+    3300008: Body5
+    3300010: Body6
+    3300012: Body7
+    3300014: Body8
+    3300016: Body9
+    3300018: exiii_3DLogo_preview.000
+    3300020: exiii_3DLogo_preview.001
+    3300022: exiii_3DLogo_preview.002
+    3300024: exiii_3DLogo_preview.003
+    3300026: exiii_3DLogo_preview.004
+    3300028: exiii_3DLogo_preview.005
+    3300030: exiii_3DLogo_preview.006
+    3300032: exiii_3DLogo_preview.007
+    3300034: exiii_3DLogo_preview.008
+    4300000: Body4
+    4300002: Body2
+    4300004: Body3
+    4300006: Body9
+    4300008: Body1
+    4300010: Body6
+    4300012: Body7
+    4300014: Body5
+    4300016: Body8
+    4300018: exiii_3DLogo_preview.008
+    4300020: exiii_3DLogo_preview.007
+    4300022: exiii_3DLogo_preview.006
+    4300024: exiii_3DLogo_preview.005
+    4300026: exiii_3DLogo_preview.004
+    4300028: exiii_3DLogo_preview.003
+    4300030: exiii_3DLogo_preview.002
+    4300032: exiii_3DLogo_preview.000
+    4300034: exiii_3DLogo_preview.001
+    2186277476908879412: ImportLogs
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 1
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

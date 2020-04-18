@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9347de91b0d8be74e9a5bd4a2fcf6dd1, type: 3}
+  m_Name: UseForceSetting
+  m_EditorClassIdentifier: 
+  m_ExName: UseForceSetting
+  m_IsActive: 0
+  m_ExTag: {fileID: 11400000, guid: 3e5c85c3202bbca4db80f5cdc2b688d7, type: 2}
+  m_ListType: 0
+  m_FilterParameters:
+  - m_Name: UseOnlyGrabed
+    m_ManipulationType: 2
+    m_IsManipulated: 1
+  - m_Name: UseOnlyGripped
+    m_ManipulationType: 1
+    m_IsManipulated: 1

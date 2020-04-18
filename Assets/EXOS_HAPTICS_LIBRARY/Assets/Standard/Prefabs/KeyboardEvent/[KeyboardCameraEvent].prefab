@@ -1,0 +1,127 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1538481735318332}
+  m_IsPrefabParent: 1
+--- !u!1 &1538481735318332
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4072156647597258}
+  - component: {fileID: 114982019876222876}
+  m_Layer: 0
+  m_Name: '[KeyboardCameraEvent]'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4072156647597258
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1538481735318332}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114982019876222876
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1538481735318332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9e89b4697a20e6439841d654afa7c34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ExName: '[KeyboardCameraEvent]'
+  m_RootObject: {fileID: 0}
+  m_IsActive: 0
+  m_KeyboardEvents:
+  - m_Name: MoveRight
+    m_Action: 0
+    m_KeyCode: 275
+    m_KeyTiming: 0
+    m_Description: 
+  - m_Name: MoveLeft
+    m_Action: 1
+    m_KeyCode: 276
+    m_KeyTiming: 0
+    m_Description: 
+  - m_Name: MoveForward
+    m_Action: 2
+    m_KeyCode: 273
+    m_KeyTiming: 0
+    m_Description: 
+  - m_Name: MoveBack
+    m_Action: 3
+    m_KeyCode: 274
+    m_KeyTiming: 0
+    m_Description: 
+  - m_Name: MoveUp
+    m_Action: 4
+    m_KeyCode: 91
+    m_KeyTiming: 0
+    m_Description: 
+  - m_Name: MoveDown
+    m_Action: 5
+    m_KeyCode: 93
+    m_KeyTiming: 0
+    m_Description: 
+  - m_Name: TurnRight
+    m_Action: 6
+    m_KeyCode: 46
+    m_KeyTiming: 0
+    m_Description: 
+  - m_Name: TurnLeft
+    m_Action: 7
+    m_KeyCode: 44
+    m_KeyTiming: 0
+    m_Description: 
+  - m_Name: PositionReset
+    m_Action: 8
+    m_KeyCode: 32
+    m_KeyTiming: 0
+    m_Description: 
+  - m_Name: SaveTransform
+    m_Action: 9
+    m_KeyCode: 115
+    m_KeyTiming: 0
+    m_Description: 
+  - m_Name: LoadTransform
+    m_Action: 10
+    m_KeyCode: 108
+    m_KeyTiming: 0
+    m_Description: 
+  - m_Name: DeleteSave
+    m_Action: 11
+    m_KeyCode: 100
+    m_KeyTiming: 0
+    m_Description: 
+  - m_Name: Amplifier
+    m_Action: 12
+    m_KeyCode: 303
+    m_KeyTiming: 0
+    m_Description: 
+  - m_Name: ChangeEnableSubCamera
+    m_Action: 13
+    m_KeyCode: 99
+    m_KeyTiming: 0
+    m_Description: 

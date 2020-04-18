@@ -1,0 +1,13 @@
+{
+    "name": "ExosCore",
+    "references": [
+        "ExosSDKUtility",
+        "ExosUtility",
+        "exiii.Unity.LinqToGameObject",
+        "exiii.Unity.SuperCharacterController"
+    ],
+    "optionalUnityReferences": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false
+}

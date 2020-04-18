@@ -1,0 +1,153 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1255162541244150}
+  m_IsPrefabParent: 1
+--- !u!1 &1255162541244150
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4115216315539836}
+  - component: {fileID: 114454288404690764}
+  - component: {fileID: 114769934008849422}
+  - component: {fileID: 114748930015554536}
+  - component: {fileID: 114810924330227444}
+  - component: {fileID: 114926943815593526}
+  - component: {fileID: 114357392193112118}
+  m_Layer: 0
+  m_Name: Steam_Wrist_DK2_L_Skeletal_100
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4115216315539836
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1255162541244150}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.5, y: 0.5, z: -0.2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114357392193112118
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1255162541244150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 745c709fa72c54347ba1044c1fe1fa15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IsActive: 0
+  m_ExTags: []
+  m_DetectionType: 0
+  m_Colliders: []
+  m_AutoSearchColliders: 1
+  m_ApplyListType: 1
+  m_ApplyList: 
+  m_Children: []
+  m_Oppsites: []
+--- !u!114 &114454288404690764
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1255162541244150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa6016309908f974f99ed73a2a04d5fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IsActive: 0
+  m_ExTags: []
+--- !u!114 &114748930015554536
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1255162541244150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d96f48361347df94d994c17461711c67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IsActive: 0
+  m_ExTags: []
+  m_ExosPrefabs: []
+  m_TrackingParameter:
+    m_TrackingType: 0
+    m_TrackingPosition: 0
+    m_LRType: 1
+  m_PositionUpdateOnUpdate: 1
+  m_ManipulatorInChildren: []
+  m_PrefabInChildren: []
+--- !u!114 &114769934008849422
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1255162541244150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4780f890fd5fac246bcbd73ab8328b76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IsActive: 0
+  m_ExTags: []
+  m_PoseAction:
+    actionPath: /actions/default/in/Pose
+    needsReinit: 0
+  m_InputSource: 1
+  m_Origin: {fileID: 0}
+  m_BroadcastDeviceChanges: 1
+--- !u!114 &114810924330227444
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1255162541244150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb85aa47c08749d4b88c8a084ef28cd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IsActive: 0
+  m_ExTags: []
+  m_Source: 1
+--- !u!114 &114926943815593526
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1255162541244150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab49d6087c8319843bae08a46b552bc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UniqueID: 619e2415-e8df-459a-8179-25d84bbfbea2
+  m_Prefabs:
+  - {fileID: 1275722506089842, guid: 0272536ef209fc14c988ae991729fce9, type: 2}
+  - {fileID: 1390973919729634, guid: a0fb37a595fa28341a8f8440f4824286, type: 2}
+  - {fileID: 1934758553152094, guid: 07f29b7ddf4a4fc438ebf6b4b5fa2079, type: 2}
+  m_PrefabSets: []
+  m_Tags: []
+  m_LayerRecursive: 1

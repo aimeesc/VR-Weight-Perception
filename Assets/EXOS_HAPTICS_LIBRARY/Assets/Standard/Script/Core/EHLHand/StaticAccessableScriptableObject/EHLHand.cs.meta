@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 8101c799c58573a4a9d19d5b576404e8
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - m_PenetratorBuildParameter: {fileID: 11400000, guid: af050b17f2438b845a740d1be2a28a27,
+      type: 2}
+  - m_PenetratorParameter: {fileID: 11400000, guid: 5863687b357631f46a9c3f094c919b8f,
+      type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

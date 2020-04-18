@@ -1,0 +1,73 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81c4b06d316451242a6f93bfcc20d531, type: 3}
+  m_Name: EXOS_Wrist_DK2_R
+  m_EditorClassIdentifier: 
+  m_ExName: EXOS_Wrist_DK2_R
+  m_IsActive: 0
+  m_Firmware: 0
+  m_DeviceID: 211
+  m_DeviceType: 0
+  m_LRType: 0
+  m_ModeSetting: 3
+  m_Mode: 0
+  m_ReverseFromDirectInput: 0
+  m_PrimaryConnectionType: 0
+  m_ConnectionEnabled: 1
+  m_ConnectionSettings:
+  - {fileID: 11400000, guid: 0bea7538d0857ec4f9557cd846575f45, type: 2}
+  - {fileID: 11400000, guid: 58ba8303e19d0bf4682577451b3560b5, type: 2}
+  m_UsedConnectionSetting: {fileID: 0}
+  m_PacketLimitter: 1
+  m_PacketLimitRate: 1
+  m_ErrorCountLimit: 300
+  m_ErrorCount: 0
+  m_ErrorCountMax: 0
+  m_JointNumber: 2
+  m_Joints:
+  - m_Name: Abduction
+    m_AxisType: 1
+    m_AngleIndex: 0
+    m_AngleLimit: {x: -450, y: 600}
+    m_InvertAngle: 0
+    m_Angle: 0
+    m_AngleRatio: 0.42857143
+    m_AngleRatioDefault: 0.429
+    m_ForceIndex: 0
+    m_Margin: 0.03
+    m_ForceLimit: 3072
+    m_InvertForce: 0
+    m_Force: 0
+    m_ForceRatio: 0
+  - m_Name: Flexion
+    m_AxisType: 2
+    m_AngleIndex: 1
+    m_AngleLimit: {x: -850, y: 850}
+    m_InvertAngle: 0
+    m_Angle: 0
+    m_AngleRatio: 0.5
+    m_AngleRatioDefault: 0.265
+    m_ForceIndex: 1
+    m_Margin: 0.03
+    m_ForceLimit: 3072
+    m_InvertForce: 0
+    m_Force: 0
+    m_ForceRatio: 0
+  m_Voltage: 0
+  m_VoltageDropLimit: 10.5
+  m_OnVoltageDrop:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  m_ReNotifyWaitMin: 5
+  m_DebugLog: 0
+  m_DeviceDebugMode: 0

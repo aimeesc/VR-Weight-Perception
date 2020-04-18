@@ -1,0 +1,82 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1888735384382930}
+  m_IsPrefabParent: 1
+--- !u!1 &1888735384382930
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4016180498213702}
+  - component: {fileID: 114656936196987082}
+  - component: {fileID: 114775563505857920}
+  m_Layer: 0
+  m_Name: EXOS_Gripper_R_Model_100
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4016180498213702
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1888735384382930}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114656936196987082
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1888735384382930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8df477712a558924bb9059191a8ffd4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ExName: EXOS_Gripper_R_Model_100
+  m_RootObject: {fileID: 0}
+  m_IsActive: 0
+  m_TrackingParameter:
+    m_TrackingType: 0
+    m_TrackingPosition: 0
+    m_LRType: 2
+  m_TargetTransform: {fileID: 0}
+  m_AutoDetectTargetTransform: 1
+  m_PositionOffset: {x: 0, y: 0, z: 0}
+  m_RotationOffset: {x: 0, y: 0, z: 0}
+--- !u!114 &114775563505857920
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1888735384382930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab49d6087c8319843bae08a46b552bc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UniqueID: 628c2566-4508-41b3-aab3-acd37e383d4a
+  m_Prefabs:
+  - {fileID: 1828567259896738, guid: 127f51e79ad8fca4e9363d2c2115d1e9, type: 2}
+  m_PrefabSets: []
+  m_Tags: []
+  m_LayerRecursive: 1

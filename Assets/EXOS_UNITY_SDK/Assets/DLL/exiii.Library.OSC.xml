@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>exiii.Library.OSC</name>
+    </assembly>
+    <members>
+        <member name="M:exiii.Library.OSC.OscPacket.parseMessage(System.Byte[])">
+            <summary>
+            Takes in an OSC bundle package in byte form and parses it into a more usable OscBundle object
+            </summary>
+            <param name="msg"></param>
+            <returns>Message containing various arguments and an address</returns>
+        </member>
+        <member name="M:exiii.Library.OSC.OscPacket.parseBundle(System.Byte[])">
+            <summary>
+            Takes in an OSC bundle package in byte form and parses it into a more usable OscBundle object
+            </summary>
+            <param name="bundle"></param>
+            <returns>Bundle containing elements and a timetag</returns>
+        </member>
+        <member name="P:exiii.Library.OSC.Timetag.Fraction">
+            <summary>
+            Gets or sets the fraction of a second in the timestamp. the double precision number is multiplied by 2^32
+            giving an accuracy down to about 230 picoseconds ( 1/(2^32) of a second)
+            </summary>
+        </member>
+    </members>
+</doc>

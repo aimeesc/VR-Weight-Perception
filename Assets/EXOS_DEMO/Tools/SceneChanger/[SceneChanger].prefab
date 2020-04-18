@@ -1,0 +1,249 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1686161740478542}
+  m_IsPrefabParent: 1
+--- !u!1 &1686161740478542
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4739916165907574}
+  - component: {fileID: 114324581894806260}
+  - component: {fileID: 114999669619265732}
+  - component: {fileID: 114589502356016768}
+  m_Layer: 0
+  m_Name: '[SceneChanger]'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4739916165907574
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1686161740478542}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114324581894806260
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1686161740478542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8e70a797326ca643979ce6ad34a7f62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ExName: '[SceneChanger]'
+  m_RootObject: {fileID: 0}
+  m_IsEnabled: 0
+  m_ExTags: []
+--- !u!114 &114589502356016768
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1686161740478542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd7faa12091571644b468f2d6306d9d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ExName: '[SceneChanger]'
+  m_RootObject: {fileID: 0}
+  m_IsEnabled: 0
+  m_ExTags: []
+  AutoSetDescription: 1
+  m_KeyboardEvents:
+  - m_Name: Scene0
+    m_Action: 0
+    m_KeyCode: 48
+    m_KeyTiming: 0
+    m_Description: 
+  - m_Name: Scene1
+    m_Action: 1
+    m_KeyCode: 49
+    m_KeyTiming: 0
+    m_Description: 
+  - m_Name: Scene2
+    m_Action: 2
+    m_KeyCode: 50
+    m_KeyTiming: 0
+    m_Description: 
+  - m_Name: Scene3
+    m_Action: 3
+    m_KeyCode: 51
+    m_KeyTiming: 0
+    m_Description: 
+  - m_Name: Scene4
+    m_Action: 4
+    m_KeyCode: 52
+    m_KeyTiming: 0
+    m_Description: 
+  - m_Name: Scene5
+    m_Action: 5
+    m_KeyCode: 53
+    m_KeyTiming: 0
+    m_Description: 
+  - m_Name: Scene6
+    m_Action: 6
+    m_KeyCode: 54
+    m_KeyTiming: 0
+    m_Description: 
+--- !u!114 &114999669619265732
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1686161740478542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2f201a4861b30d44836f22d6f6d71be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions:
+  - m_Name: Scene0
+    m_Action: 0
+    m_Events:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 114324581894806260}
+          m_MethodName: ChangeScene
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+  - m_Name: Scene1
+    m_Action: 1
+    m_Events:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 114324581894806260}
+          m_MethodName: ChangeScene
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 1
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+  - m_Name: Scene2
+    m_Action: 2
+    m_Events:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 114324581894806260}
+          m_MethodName: ChangeScene
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 2
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+  - m_Name: Scene3
+    m_Action: 3
+    m_Events:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 114324581894806260}
+          m_MethodName: ChangeScene
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 3
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+  - m_Name: Scene4
+    m_Action: 4
+    m_Events:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 114324581894806260}
+          m_MethodName: ChangeScene
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 4
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+  - m_Name: Scene5
+    m_Action: 5
+    m_Events:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 114324581894806260}
+          m_MethodName: ChangeScene
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 5
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+  - m_Name: Scene6
+    m_Action: 6
+    m_Events:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 114324581894806260}
+          m_MethodName: ChangeScene
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 6
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null

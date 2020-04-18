@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae0d7032196924f4d8f29260faa9385d, type: 3}
+  m_Name: PenetratorParameter_Thumb
+  m_EditorClassIdentifier: 
+  m_Owner: {fileID: 11400000}
+  m_IsOriginal: 1
+  m_Size: 0.02
+  m_Density: 2
+  m_Visible: 1
+  m_UseToPenetration: 1

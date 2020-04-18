@@ -1,0 +1,11 @@
+{
+    "name": "ExosUtility",
+    "references": [
+        "ExosSDKUtility",
+        "exiii.Unity.LinqToGameObject"
+    ],
+    "optionalUnityReferences": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false
+}

@@ -1,0 +1,1286 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>exiii.Library.Utility</name>
+    </assembly>
+    <members>
+        <member name="T:exiii.Collections.LimitedList`1">
+            <summary>
+            Provide list has limited length
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="P:exiii.Collections.LimitedList`1.MaxItemCount">
+            <summary>
+            Max item count
+            </summary>
+        </member>
+        <member name="M:exiii.Collections.LimitedList`1.#ctor">
+            <summary>
+            constructor
+            </summary>
+        </member>
+        <member name="M:exiii.Collections.LimitedList`1.#ctor(System.Int32)">
+            <summary>
+            constructor
+            </summary>
+        </member>
+        <member name="M:exiii.Collections.LimitedList`1.Add(`0)">
+            <summary>
+            Add item
+            </summary>
+            <param name="item"></param>
+        </member>
+        <member name="M:exiii.Collections.LimitedList`1.AddRange(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            Add maltiple item
+            </summary>
+            <param name="collection"></param>
+        </member>
+        <member name="M:exiii.Collections.LimitedList`1.Insert(System.Int32,`0)">
+            <summary>
+            Insert item
+            </summary>
+            <param name="index"></param>
+            <param name="item"></param>
+        </member>
+        <member name="M:exiii.Collections.LimitedList`1.InsertRange(System.Int32,System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            Insert maltiple item
+            </summary>
+            <param name="index"></param>
+            <param name="collection"></param>
+        </member>
+        <member name="T:exiii.Extensions.EnumToStringHelper">
+            <summary>
+            Helper class to generate string from enum
+            </summary>
+        </member>
+        <member name="M:exiii.Extensions.EnumToStringHelper.EnumToString``1(``0)">
+            <summary>
+            Generate string from name of enum item
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="T:exiii.Extensions.Extension">
+            <summary>
+            Helper class to extend using extension
+            </summary>
+        </member>
+        <member name="M:exiii.Extensions.Extension.Cut(System.String,System.Char,System.Int32)">
+            <summary>
+            Cut string with given delimiter
+            </summary>
+            <param name="target"></param>
+            <param name="delimita"></param>
+            <param name="index"></param>
+            <returns></returns>
+        </member>
+        <member name="M:exiii.Extensions.Extension.Invoke``1(``0,System.Action{``0})">
+            <summary>
+            Invoke the action
+            </summary>
+            <param name="obj"></param>
+            <param name="action"></param>
+        </member>
+        <member name="M:exiii.Extensions.Extension.Invoke``2(``0,System.Func{``0,``1})">
+            <summary>
+            Invoke the function
+            </summary>
+            <typeparam name="T"></typeparam>
+            <typeparam name="V"></typeparam>
+            <param name="obj"></param>
+            <param name="func"></param>
+        </member>
+        <member name="T:exiii.Extensions.ExtensionAsync">
+            <summary>
+            Extension method for async
+            </summary>
+        </member>
+        <member name="M:exiii.Extensions.ExtensionAsync.Timeout(System.Threading.Tasks.Task,System.TimeSpan)">
+            <summary>
+            generate timeout exception
+            </summary>
+            <param name="task"></param>
+            <param name="timeout"></param>
+            <returns></returns>
+        </member>
+        <member name="M:exiii.Extensions.ExtensionAsync.Timeout``1(System.Threading.Tasks.Task{``0},System.TimeSpan)">
+            <summary>
+            generate timeout exception
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="task"></param>
+            <param name="timeout"></param>
+            <returns></returns>
+        </member>
+        <member name="T:exiii.Extensions.ExtensionLinq">
+            <summary>
+            Helper class to extend Linq
+            </summary>
+        </member>
+        <member name="M:exiii.Extensions.ExtensionLinq.Foreach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0})">
+            <summary>
+            Do action to each item in given source
+            </summary>
+            <typeparam name="TSource"></typeparam>
+            <param name="source"></param>
+            <param name="action"></param>
+        </member>
+        <member name="M:exiii.Extensions.ExtensionLinq.Foreach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0,System.Int32})">
+            <summary>
+            Do action to each item in given source
+            </summary>
+            <typeparam name="TSource"></typeparam>
+            <param name="source"></param>
+            <param name="action"></param>
+        </member>
+        <member name="M:exiii.Extensions.ExtensionLinq.CheckNull``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Remove null in given source
+            </summary>
+            <typeparam name="TSource"></typeparam>
+            <param name="source"></param>
+            <returns></returns>
+        </member>
+        <member name="M:exiii.Extensions.ExtensionLinq.Indexed``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Access to indexed items
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="source"></param>
+            <returns></returns>
+        </member>
+        <member name="T:exiii.IndexerBase">
+            <summary>
+            Base class of the class that provides array access to ExArray
+            </summary>
+        </member>
+        <member name="P:exiii.IndexerBase.ExArray">
+            <summary>
+            ExArray to be operated
+            </summary>
+        </member>
+        <member name="M:exiii.IndexerBase.#ctor(exiii.ExArray)">
+            <summary>
+            constructor
+            </summary>
+            <param name="byteArray">ExArray to be operated</param>
+        </member>
+        <member name="T:exiii.Indexer">
+            <summary>
+            Base class of the class that provides array access to ExArray
+            </summary>
+        </member>
+        <member name="P:exiii.Indexer.PointerArray">
+            <summary>
+            Pointer array of the data you want to provide array access
+            </summary>
+        </member>
+        <member name="P:exiii.Indexer.Count">
+            <summary>
+            Number of items contained in PointerArray
+            </summary>
+        </member>
+        <member name="M:exiii.Indexer.#ctor(exiii.ExArray,System.Collections.Generic.IList{exiii.Pointer})">
+            <summary>
+            constructor
+            </summary>
+            <param name="byteArray">ExArray to be operated</param>
+            <param name="pointerArray">Pointer array of the data you want to provide array access</param>
+        </member>
+        <member name="T:exiii.IndexerBool">
+            <summary>
+            Base class of the class that provides array access to ExArray
+            </summary>
+        </member>
+        <member name="P:exiii.IndexerBool.PointerArray">
+            <summary>
+            Pointer array of the data you want to provide array access
+            </summary>
+        </member>
+        <member name="P:exiii.IndexerBool.Count">
+            <summary>
+            Number of items contained in PointerArray
+            </summary>
+        </member>
+        <member name="M:exiii.IndexerBool.#ctor(exiii.ExArray,System.Collections.Generic.IList{exiii.Pointer{System.Boolean}})">
+            <summary>
+            constructor
+            </summary>
+            <param name="byteArray">ExArray to be operated</param>
+            <param name="pointerArray">Pointer array of the data you want to provide array access</param>
+        </member>
+        <member name="T:exiii.IndexerByte">
+            <summary>
+            Base class of the class that provides array access to ExArray
+            </summary>
+        </member>
+        <member name="P:exiii.IndexerByte.PointerArray">
+            <summary>
+            Pointer array of the data you want to provide array access
+            </summary>
+        </member>
+        <member name="P:exiii.IndexerByte.Count">
+            <summary>
+            Number of items contained in PointerArray
+            </summary>
+        </member>
+        <member name="M:exiii.IndexerByte.#ctor(exiii.ExArray,System.Collections.Generic.IList{exiii.Pointer{System.Byte}})">
+            <summary>
+            constructor
+            </summary>
+            <param name="byteArray">ExArray to be operated</param>
+            <param name="pointerArray">Pointer array of the data you want to provide array access</param>
+        </member>
+        <member name="T:exiii.IndexerSByte">
+            <summary>
+            Base class of the class that provides array access to ExArray
+            </summary>
+        </member>
+        <member name="P:exiii.IndexerSByte.PointerArray">
+            <summary>
+            Pointer array of the data you want to provide array access
+            </summary>
+        </member>
+        <member name="P:exiii.IndexerSByte.Count">
+            <summary>
+            Number of items contained in PointerArray
+            </summary>
+        </member>
+        <member name="M:exiii.IndexerSByte.#ctor(exiii.ExArray,System.Collections.Generic.IList{exiii.Pointer{System.SByte}})">
+            <summary>
+            constructor
+            </summary>
+            <param name="byteArray">ExArray to be operated</param>
+            <param name="pointerArray">Pointer array of the data you want to provide array access</param>
+        </member>
+        <member name="T:exiii.IndexerUShort">
+            <summary>
+            Base class of the class that provides array access to ExArray
+            </summary>
+        </member>
+        <member name="P:exiii.IndexerUShort.PointerArray">
+            <summary>
+            Pointer array of the data you want to provide array access
+            </summary>
+        </member>
+        <member name="P:exiii.IndexerUShort.Count">
+            <summary>
+            Number of items contained in PointerArray
+            </summary>
+        </member>
+        <member name="M:exiii.IndexerUShort.#ctor(exiii.ExArray,System.Collections.Generic.IList{exiii.Pointer{System.UInt16}})">
+            <summary>
+            constructor
+            </summary>
+            <param name="byteArray">ExArray to be operated</param>
+            <param name="pointerArray">Pointer array of the data you want to provide array access</param>
+        </member>
+        <member name="T:exiii.IndexerShort">
+            <summary>
+            Base class of the class that provides array access to ExArray
+            </summary>
+        </member>
+        <member name="P:exiii.IndexerShort.PointerArray">
+            <summary>
+            Pointer array of the data you want to provide array access
+            </summary>
+        </member>
+        <member name="P:exiii.IndexerShort.Count">
+            <summary>
+            Number of items contained in PointerArray
+            </summary>
+        </member>
+        <member name="M:exiii.IndexerShort.#ctor(exiii.ExArray,System.Collections.Generic.IList{exiii.Pointer{System.Int16}})">
+            <summary>
+            constructor
+            </summary>
+            <param name="byteArray">ExArray to be operated</param>
+            <param name="pointerArray">Pointer array of the data you want to provide array access</param>
+        </member>
+        <member name="T:exiii.IndexerUInt">
+            <summary>
+            Base class of the class that provides array access to ExArray
+            </summary>
+        </member>
+        <member name="P:exiii.IndexerUInt.PointerArray">
+            <summary>
+            Pointer array of the data you want to provide array access
+            </summary>
+        </member>
+        <member name="P:exiii.IndexerUInt.Count">
+            <summary>
+            Number of items contained in PointerArray
+            </summary>
+        </member>
+        <member name="M:exiii.IndexerUInt.#ctor(exiii.ExArray,System.Collections.Generic.IList{exiii.Pointer{System.UInt32}})">
+            <summary>
+            constructor
+            </summary>
+            <param name="byteArray">ExArray to be operated</param>
+            <param name="pointerArray">Pointer array of the data you want to provide array access</param>
+        </member>
+        <member name="T:exiii.IndexerInt">
+            <summary>
+            Base class of the class that provides array access to ExArray
+            </summary>
+        </member>
+        <member name="P:exiii.IndexerInt.PointerArray">
+            <summary>
+            Pointer array of the data you want to provide array access
+            </summary>
+        </member>
+        <member name="P:exiii.IndexerInt.Count">
+            <summary>
+            Number of items contained in PointerArray
+            </summary>
+        </member>
+        <member name="M:exiii.IndexerInt.#ctor(exiii.ExArray,System.Collections.Generic.IList{exiii.Pointer{System.Int32}})">
+            <summary>
+            constructor
+            </summary>
+            <param name="byteArray">ExArray to be operated</param>
+            <param name="pointerArray">Pointer array of the data you want to provide array access</param>
+        </member>
+        <member name="T:exiii.IndexerFloat">
+            <summary>
+            Base class of the class that provides array access to ExArray
+            </summary>
+        </member>
+        <member name="P:exiii.IndexerFloat.PointerArray">
+            <summary>
+            Pointer array of the data you want to provide array access
+            </summary>
+        </member>
+        <member name="P:exiii.IndexerFloat.Count">
+            <summary>
+            Number of items contained in PointerArray
+            </summary>
+        </member>
+        <member name="M:exiii.IndexerFloat.#ctor(exiii.ExArray,System.Collections.Generic.IList{exiii.Pointer{System.Single}})">
+            <summary>
+            constructor
+            </summary>
+            <param name="byteArray">ExArray to be operated</param>
+            <param name="pointerArray">Pointer array of the data you want to provide array access</param>
+        </member>
+        <member name="T:exiii.IndexerReadOnly">
+            <summary>
+            Class providing array access to ExArray as Read only
+            </summary>
+        </member>
+        <member name="M:exiii.IndexerReadOnly.#ctor(exiii.ExArray,System.Collections.Generic.IList{exiii.Pointer})">
+            <summary>
+            constructor
+            </summary>
+            <param name="e"></param>
+            <param name="p"></param>
+        </member>
+        <member name="P:exiii.IndexerReadOnly.Item(System.Int32)">
+            <summary>
+            Manipulate values ​​from Pointer
+            </summary>
+            <param name="index">Array index</param>
+            <returns>value</returns>
+        </member>
+        <member name="T:exiii.IndexerBoolReadOnly">
+            <summary>
+            Class providing array access to ExArray as Read only
+            </summary>
+        </member>
+        <member name="M:exiii.IndexerBoolReadOnly.#ctor(exiii.ExArray,System.Collections.Generic.IList{exiii.Pointer{System.Boolean}})">
+            <summary>
+            constructor
+            </summary>
+            <param name="e"></param>
+            <param name="p"></param>
+        </member>
+        <member name="P:exiii.IndexerBoolReadOnly.Item(System.Int32)">
+            <summary>
+            Manipulate values ​​from Pointer
+            </summary>
+            <param name="index">Array index</param>
+            <returns>value</returns>
+        </member>
+        <member name="T:exiii.IndexerByteReadOnly">
+            <summary>
+            Class providing array access to ExArray as Read only
+            </summary>
+        </member>
+        <member name="M:exiii.IndexerByteReadOnly.#ctor(exiii.ExArray,System.Collections.Generic.IList{exiii.Pointer{System.Byte}})">
+            <summary>
+            constructor
+            </summary>
+            <param name="e"></param>
+            <param name="p"></param>
+        </member>
+        <member name="P:exiii.IndexerByteReadOnly.Item(System.Int32)">
+            <summary>
+            Manipulate values ​​from Pointer
+            </summary>
+            <param name="index">Array index</param>
+            <returns>value</returns>
+        </member>
+        <member name="T:exiii.IndexerSByteReadOnly">
+            <summary>
+            Class providing array access to ExArray as Read only
+            </summary>
+        </member>
+        <member name="M:exiii.IndexerSByteReadOnly.#ctor(exiii.ExArray,System.Collections.Generic.IList{exiii.Pointer{System.SByte}})">
+            <summary>
+            constructor
+            </summary>
+            <param name="e"></param>
+            <param name="p"></param>
+        </member>
+        <member name="P:exiii.IndexerSByteReadOnly.Item(System.Int32)">
+            <summary>
+            Manipulate values ​​from Pointer
+            </summary>
+            <param name="index">Array index</param>
+            <returns>value</returns>
+        </member>
+        <member name="T:exiii.IndexerUShortReadOnly">
+            <summary>
+            Class providing array access to ExArray as Read only
+            </summary>
+        </member>
+        <member name="M:exiii.IndexerUShortReadOnly.#ctor(exiii.ExArray,System.Collections.Generic.IList{exiii.Pointer{System.UInt16}})">
+            <summary>
+            constructor
+            </summary>
+            <param name="e"></param>
+            <param name="p"></param>
+        </member>
+        <member name="P:exiii.IndexerUShortReadOnly.Item(System.Int32)">
+            <summary>
+            Manipulate values ​​from Pointer
+            </summary>
+            <param name="index">Array index</param>
+            <returns>value</returns>
+        </member>
+        <member name="T:exiii.IndexerShortReadOnly">
+            <summary>
+            Class providing array access to ExArray as Read only
+            </summary>
+        </member>
+        <member name="M:exiii.IndexerShortReadOnly.#ctor(exiii.ExArray,System.Collections.Generic.IList{exiii.Pointer{System.Int16}})">
+            <summary>
+            constructor
+            </summary>
+            <param name="e"></param>
+            <param name="p"></param>
+        </member>
+        <member name="P:exiii.IndexerShortReadOnly.Item(System.Int32)">
+            <summary>
+            Manipulate values ​​from Pointer
+            </summary>
+            <param name="index">Array index</param>
+            <returns>value</returns>
+        </member>
+        <member name="T:exiii.IndexerUIntReadOnly">
+            <summary>
+            Class providing array access to ExArray as Read only
+            </summary>
+        </member>
+        <member name="M:exiii.IndexerUIntReadOnly.#ctor(exiii.ExArray,System.Collections.Generic.IList{exiii.Pointer{System.UInt32}})">
+            <summary>
+            constructor
+            </summary>
+            <param name="e"></param>
+            <param name="p"></param>
+        </member>
+        <member name="P:exiii.IndexerUIntReadOnly.Item(System.Int32)">
+            <summary>
+            Manipulate values ​​from Pointer
+            </summary>
+            <param name="index">Array index</param>
+            <returns>value</returns>
+        </member>
+        <member name="T:exiii.IndexerIntReadOnly">
+            <summary>
+            Class providing array access to ExArray as Read only
+            </summary>
+        </member>
+        <member name="M:exiii.IndexerIntReadOnly.#ctor(exiii.ExArray,System.Collections.Generic.IList{exiii.Pointer{System.Int32}})">
+            <summary>
+            constructor
+            </summary>
+            <param name="e"></param>
+            <param name="p"></param>
+        </member>
+        <member name="P:exiii.IndexerIntReadOnly.Item(System.Int32)">
+            <summary>
+            Manipulate values ​​from Pointer
+            </summary>
+            <param name="index">Array index</param>
+            <returns>value</returns>
+        </member>
+        <member name="T:exiii.IndexerFloatReadOnly">
+            <summary>
+            Class providing array access to ExArray as Read only
+            </summary>
+        </member>
+        <member name="M:exiii.IndexerFloatReadOnly.#ctor(exiii.ExArray,System.Collections.Generic.IList{exiii.Pointer{System.Single}})">
+            <summary>
+            constructor
+            </summary>
+            <param name="e"></param>
+            <param name="p"></param>
+        </member>
+        <member name="P:exiii.IndexerFloatReadOnly.Item(System.Int32)">
+            <summary>
+            Manipulate values ​​from Pointer
+            </summary>
+            <param name="index">Array index</param>
+            <returns>value</returns>
+        </member>
+        <member name="T:exiii.IndexerReadWrite">
+            <summary>
+            Class providing array access to ExArray as Readable / Writable
+            </summary>
+        </member>
+        <member name="M:exiii.IndexerReadWrite.#ctor(exiii.ExArray,System.Collections.Generic.IList{exiii.Pointer})">
+            <summary>
+            constructor
+            </summary>
+            <param name="e"></param>
+            <param name="p"></param>
+        </member>
+        <member name="P:exiii.IndexerReadWrite.Item(System.Int32)">
+            <summary>
+            Manipulate values ​​from Pointer
+            </summary>
+            <param name="index">Array index</param>
+            <returns>value</returns>
+        </member>
+        <member name="T:exiii.IndexerBoolReadWrite">
+            <summary>
+            Class providing array access to ExArray as Readable / Writable
+            </summary>
+        </member>
+        <member name="M:exiii.IndexerBoolReadWrite.#ctor(exiii.ExArray,System.Collections.Generic.IList{exiii.Pointer{System.Boolean}})">
+            <summary>
+            constructor
+            </summary>
+            <param name="e"></param>
+            <param name="p"></param>
+        </member>
+        <member name="P:exiii.IndexerBoolReadWrite.Item(System.Int32)">
+            <summary>
+            Manipulate values ​​from Pointer
+            </summary>
+            <param name="index">Array index</param>
+            <returns>value</returns>
+        </member>
+        <member name="T:exiii.IndexerByteReadWrite">
+            <summary>
+            Class providing array access to ExArray as Readable / Writable
+            </summary>
+        </member>
+        <member name="M:exiii.IndexerByteReadWrite.#ctor(exiii.ExArray,System.Collections.Generic.IList{exiii.Pointer{System.Byte}})">
+            <summary>
+            constructor
+            </summary>
+            <param name="e"></param>
+            <param name="p"></param>
+        </member>
+        <member name="P:exiii.IndexerByteReadWrite.Item(System.Int32)">
+            <summary>
+            Manipulate values ​​from Pointer
+            </summary>
+            <param name="index">Array index</param>
+            <returns>value</returns>
+        </member>
+        <member name="T:exiii.IndexerSByteReadWrite">
+            <summary>
+            Class providing array access to ExArray as Readable / Writable
+            </summary>
+        </member>
+        <member name="M:exiii.IndexerSByteReadWrite.#ctor(exiii.ExArray,System.Collections.Generic.IList{exiii.Pointer{System.SByte}})">
+            <summary>
+            constructor
+            </summary>
+            <param name="e"></param>
+            <param name="p"></param>
+        </member>
+        <member name="P:exiii.IndexerSByteReadWrite.Item(System.Int32)">
+            <summary>
+            Manipulate values ​​from Pointer
+            </summary>
+            <param name="index">Array index</param>
+            <returns>value</returns>
+        </member>
+        <member name="T:exiii.IndexerUShortReadWrite">
+            <summary>
+            Class providing array access to ExArray as Readable / Writable
+            </summary>
+        </member>
+        <member name="M:exiii.IndexerUShortReadWrite.#ctor(exiii.ExArray,System.Collections.Generic.IList{exiii.Pointer{System.UInt16}})">
+            <summary>
+            constructor
+            </summary>
+            <param name="e"></param>
+            <param name="p"></param>
+        </member>
+        <member name="P:exiii.IndexerUShortReadWrite.Item(System.Int32)">
+            <summary>
+            Manipulate values ​​from Pointer
+            </summary>
+            <param name="index">Array index</param>
+            <returns>value</returns>
+        </member>
+        <member name="T:exiii.IndexerShortReadWrite">
+            <summary>
+            Class providing array access to ExArray as Readable / Writable
+            </summary>
+        </member>
+        <member name="M:exiii.IndexerShortReadWrite.#ctor(exiii.ExArray,System.Collections.Generic.IList{exiii.Pointer{System.Int16}})">
+            <summary>
+            constructor
+            </summary>
+            <param name="e"></param>
+            <param name="p"></param>
+        </member>
+        <member name="P:exiii.IndexerShortReadWrite.Item(System.Int32)">
+            <summary>
+            Manipulate values ​​from Pointer
+            </summary>
+            <param name="index">Array index</param>
+            <returns>value</returns>
+        </member>
+        <member name="T:exiii.IndexerUIntReadWrite">
+            <summary>
+            Class providing array access to ExArray as Readable / Writable
+            </summary>
+        </member>
+        <member name="M:exiii.IndexerUIntReadWrite.#ctor(exiii.ExArray,System.Collections.Generic.IList{exiii.Pointer{System.UInt32}})">
+            <summary>
+            constructor
+            </summary>
+            <param name="e"></param>
+            <param name="p"></param>
+        </member>
+        <member name="P:exiii.IndexerUIntReadWrite.Item(System.Int32)">
+            <summary>
+            Manipulate values ​​from Pointer
+            </summary>
+            <param name="index">Array index</param>
+            <returns>value</returns>
+        </member>
+        <member name="T:exiii.IndexerIntReadWrite">
+            <summary>
+            Class providing array access to ExArray as Readable / Writable
+            </summary>
+        </member>
+        <member name="M:exiii.IndexerIntReadWrite.#ctor(exiii.ExArray,System.Collections.Generic.IList{exiii.Pointer{System.Int32}})">
+            <summary>
+            constructor
+            </summary>
+            <param name="e"></param>
+            <param name="p"></param>
+        </member>
+        <member name="P:exiii.IndexerIntReadWrite.Item(System.Int32)">
+            <summary>
+            Manipulate values ​​from Pointer
+            </summary>
+            <param name="index">Array index</param>
+            <returns>value</returns>
+        </member>
+        <member name="T:exiii.IndexerFloatReadWrite">
+            <summary>
+            Class providing array access to ExArray as Readable / Writable
+            </summary>
+        </member>
+        <member name="M:exiii.IndexerFloatReadWrite.#ctor(exiii.ExArray,System.Collections.Generic.IList{exiii.Pointer{System.Single}})">
+            <summary>
+            constructor
+            </summary>
+            <param name="e"></param>
+            <param name="p"></param>
+        </member>
+        <member name="P:exiii.IndexerFloatReadWrite.Item(System.Int32)">
+            <summary>
+            Manipulate values ​​from Pointer
+            </summary>
+            <param name="index">Array index</param>
+            <returns>value</returns>
+        </member>
+        <member name="T:exiii.Pointer">
+            <summary>
+            Used to represent a specific range of byte sequences when performing operations on ExArray
+            </summary>
+        </member>
+        <member name="P:exiii.Pointer.Address">
+            <summary>
+            Index of byte sequence
+            </summary>
+        </member>
+        <member name="P:exiii.Pointer.Size">
+            <summary>
+            Data size from Address
+            </summary>
+        </member>
+        <member name="P:exiii.Pointer.Signed">
+            <summary>
+            Flag indicating whether the data is signed
+            </summary>
+        </member>
+        <member name="M:exiii.Pointer.#ctor(System.Byte,System.Byte,System.Boolean)">
+            <summary>
+            constructor
+            </summary>
+            <param name="address">Index of byte sequence</param>
+            <param name="size">Data size from Address</param>
+            <param name="signed">Flag indicating whether the data is signed</param>
+        </member>
+        <member name="M:exiii.Pointer.op_Implicit(exiii.Pointer{System.Boolean})~exiii.Pointer">
+            <summary>
+            Convert to non generic pointer
+            </summary>
+            <param name="pointer"></param>
+        </member>
+        <member name="M:exiii.Pointer.op_Implicit(exiii.Pointer{System.Byte})~exiii.Pointer">
+            <summary>
+            Convert to non generic pointer
+            </summary>
+            <param name="pointer"></param>
+        </member>
+        <member name="M:exiii.Pointer.op_Implicit(exiii.Pointer{System.SByte})~exiii.Pointer">
+            <summary>
+            Convert to non generic pointer
+            </summary>
+            <param name="pointer"></param>
+        </member>
+        <member name="M:exiii.Pointer.op_Implicit(exiii.Pointer{System.UInt16})~exiii.Pointer">
+            <summary>
+            Convert to non generic pointer
+            </summary>
+            <param name="pointer"></param>
+        </member>
+        <member name="M:exiii.Pointer.op_Implicit(exiii.Pointer{System.Int16})~exiii.Pointer">
+            <summary>
+            Convert to non generic pointer
+            </summary>
+            <param name="pointer"></param>
+        </member>
+        <member name="M:exiii.Pointer.op_Implicit(exiii.Pointer{System.UInt32})~exiii.Pointer">
+            <summary>
+            Convert to non generic pointer
+            </summary>
+            <param name="pointer"></param>
+        </member>
+        <member name="M:exiii.Pointer.op_Implicit(exiii.Pointer{System.Int32})~exiii.Pointer">
+            <summary>
+            Convert to non generic pointer
+            </summary>
+            <param name="pointer"></param>
+        </member>
+        <member name="M:exiii.Pointer.op_Implicit(exiii.Pointer{System.Single})~exiii.Pointer">
+            <summary>
+            Convert to non generic pointer
+            </summary>
+            <param name="pointer"></param>
+        </member>
+        <member name="T:exiii.Pointer`1">
+            <summary>
+            Used to represent a specific range of byte sequences when performing operations on ExArray
+            </summary>
+        </member>
+        <member name="P:exiii.Pointer`1.Data">
+            <summary>
+            Pointer of non generic
+            </summary>
+        </member>
+        <member name="P:exiii.Pointer`1.Address">
+            <summary>
+            Index of byte sequence
+            </summary>
+        </member>
+        <member name="P:exiii.Pointer`1.Size">
+            <summary>
+            Data size from Address
+            </summary>
+        </member>
+        <member name="P:exiii.Pointer`1.Signed">
+            <summary>
+            Flag indicating whether the data is signed
+            </summary>
+        </member>
+        <member name="M:exiii.Pointer`1.#ctor(System.Byte)">
+            <summary>
+            constructor
+            </summary>
+            <param name="address">Index of byte sequence</param>
+        </member>
+        <member name="T:exiii.Reactive.ClockGenerator">
+            <summary>
+            Generate clock as IObservable
+            </summary>
+        </member>
+        <member name="P:exiii.Reactive.ClockGenerator.Span">
+            <summary>
+            Clock TimeSpan
+            </summary>
+        </member>
+        <member name="P:exiii.Reactive.ClockGenerator.Clock">
+            <summary>
+            Clock IObservable
+            </summary>
+        </member>
+        <member name="M:exiii.Reactive.ClockGenerator.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:exiii.Reactive.ClockGenerator.#ctor(System.TimeSpan)">
+            <summary>
+            Constructor with TimeSpan for Clock
+            </summary>
+            <param name="span">Clock span</param>
+        </member>
+        <member name="M:exiii.Reactive.ClockGenerator.GenerateClock(System.TimeSpan)">
+            <summary>
+            Generate clock with TimeSpan
+            </summary>
+            <param name="span">Clock span</param>
+            <returns></returns>
+        </member>
+        <member name="M:exiii.Reactive.ClockGenerator.Dispose(System.Boolean)">
+            <summary>
+            Implement for IDisposable
+            </summary>
+            <param name="disposing"></param>
+        </member>
+        <member name="M:exiii.Reactive.ClockGenerator.Dispose">
+            <summary>
+            Implement for IDisposable
+            </summary>
+        </member>
+        <member name="T:exiii.DataLogger">
+            <summary>
+            Output log file
+            </summary>
+        </member>
+        <member name="P:exiii.DataLogger.Enable">
+            <summary>
+            Whether to output log
+            </summary>
+        </member>
+        <member name="F:exiii.DataLogger.MaxCount">
+            <summary>
+            Maximum number of log output times
+            </summary>
+        </member>
+        <member name="F:exiii.DataLogger.Interval">
+            <summary>
+            Number of times to skip log output
+            If you set 1 or more、Output once >> Interval number No output >> Output once >> ...
+            When set to 0, all Logs are output
+            </summary>
+        </member>
+        <member name="P:exiii.DataLogger.Address">
+            <summary>
+            Address to output log file
+            </summary>
+        </member>
+        <member name="P:exiii.DataLogger.FileName">
+            <summary>
+            Name of log file
+            </summary>
+        </member>
+        <member name="P:exiii.DataLogger.Title">
+            <summary>
+            String output to the first line of the log
+            </summary>
+        </member>
+        <member name="M:exiii.DataLogger.#ctor(System.String,System.String)">
+            <summary>
+            constructor
+            </summary>
+            <param name="name">Name of log file</param>
+            <param name="address">Address to output log file</param>
+        </member>
+        <member name="M:exiii.DataLogger.LogUpdate(System.Object[])">
+            <summary>
+            Add log to buffer
+            Objects passed as an array are output separated by commas, and a newline is added at the end
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="M:exiii.DataLogger.LogSave">
+            <summary>
+            Save logs buffered in a file
+            </summary>
+        </member>
+        <member name="T:exiii.ExArray">
+            <summary>
+            Provides the function of accessing the byte sequence in the reserved byte sequence and inputting and outputting Int type numerical values ​​and arrays
+            </summary>
+        </member>
+        <member name="P:exiii.ExArray.Memory">
+            <summary>
+            Byte string
+            </summary>
+        </member>
+        <member name="P:exiii.ExArray.IndexerDic">
+            <summary>
+            List of Indexer to provide array access
+            </summary>
+        </member>
+        <member name="M:exiii.ExArray.GetValue(exiii.Pointer)">
+            <summary>
+            The item specified by Pointer is acquired as Int.
+            </summary>
+            <param name="pointer">A structure that specifies the type of data</param>
+        </member>
+        <member name="M:exiii.ExArray.GetValue(exiii.Pointer{System.Boolean})">
+            <summary>
+            The item specified by Pointer is acquired as bool.
+            </summary>
+            <param name="pointer">A structure that specifies the type of data</param>
+        </member>
+        <member name="M:exiii.ExArray.GetValue(exiii.Pointer{System.Byte})">
+            <summary>
+            The item specified by Pointer is acquired as byte.
+            </summary>
+            <param name="pointer">A structure that specifies the type of data</param>
+        </member>
+        <member name="M:exiii.ExArray.GetValue(exiii.Pointer{System.SByte})">
+            <summary>
+            The item specified by Pointer is acquired as sbyte.
+            </summary>
+            <param name="pointer">A structure that specifies the type of data</param>
+        </member>
+        <member name="M:exiii.ExArray.GetValue(exiii.Pointer{System.UInt16})">
+            <summary>
+            The item specified by Pointer is acquired as ushort.
+            </summary>
+            <param name="pointer">A structure that specifies the type of data</param>
+        </member>
+        <member name="M:exiii.ExArray.GetValue(exiii.Pointer{System.Int16})">
+            <summary>
+            The item specified by Pointer is acquired as ushort.
+            </summary>
+            <param name="pointer">A structure that specifies the type of data</param>
+        </member>
+        <member name="M:exiii.ExArray.GetValue(exiii.Pointer{System.UInt32})">
+            <summary>
+            The item specified by Pointer is acquired as uint.
+            </summary>
+            <param name="pointer">A structure that specifies the type of data</param>
+        </member>
+        <member name="M:exiii.ExArray.GetValue(exiii.Pointer{System.Int32})">
+            <summary>
+            The item specified by Pointer is acquired as int.
+            </summary>
+            <param name="pointer">A structure that specifies the type of data</param>
+        </member>
+        <member name="M:exiii.ExArray.GetValue(exiii.Pointer{System.Single})">
+            <summary>
+            The item specified by Pointer is acquired as int.
+            </summary>
+            <param name="pointer">A structure that specifies the type of data</param>
+        </member>
+        <member name="M:exiii.ExArray.SetValue(exiii.Pointer,System.Int32)">
+            <summary>
+            Set Int to the item specified by Pointer.
+            </summary>
+            <param name="pointer">A structure that specifies the type of data</param>
+            /// <param name="value">Value to set</param>
+        </member>
+        <member name="M:exiii.ExArray.SetValue(exiii.Pointer{System.Boolean},System.Boolean)">
+            <summary>
+            Set bool to the item specified by Pointer.
+            </summary>
+            <param name="pointer">A structure that specifies the type of data</param>
+            <param name="value">Value to set</param>
+        </member>
+        <member name="M:exiii.ExArray.SetValue(exiii.Pointer{System.Byte},System.Byte)">
+            <summary>
+            Set byte to the item specified by Pointer.
+            </summary>
+            <param name="pointer">A structure that specifies the type of data</param>
+            <param name="value">Value to set</param>
+        </member>
+        <member name="M:exiii.ExArray.SetValue(exiii.Pointer{System.SByte},System.SByte)">
+            <summary>
+            Set sbyte to the item specified by Pointer.
+            </summary>
+            <param name="pointer">A structure that specifies the type of data</param>
+            <param name="value">Value to set</param>
+        </member>
+        <member name="M:exiii.ExArray.SetValue(exiii.Pointer{System.UInt16},System.UInt16)">
+            <summary>
+            Set ushort to the item specified by Pointer.
+            </summary>
+            <param name="pointer">A structure that specifies the type of data</param>
+            <param name="value">Value to set</param>
+        </member>
+        <member name="M:exiii.ExArray.SetValue(exiii.Pointer{System.Int16},System.Int16)">
+            <summary>
+            Set short to the item specified by Pointer.
+            </summary>
+            <param name="pointer">A structure that specifies the type of data</param>
+            <param name="value">Value to set</param>
+        </member>
+        <member name="M:exiii.ExArray.SetValue(exiii.Pointer{System.UInt32},System.UInt32)">
+            <summary>
+            Set uint to the item specified by Pointer.
+            </summary>
+            <param name="pointer">A structure that specifies the type of data</param>
+            <param name="value">Value to set</param>
+        </member>
+        <member name="M:exiii.ExArray.SetValue(exiii.Pointer{System.Int32},System.Int32)">
+            <summary>
+            Set int to the item specified by Pointer.
+            </summary>
+            <param name="pointer">A structure that specifies the type of data</param>
+            <param name="value">Value to set</param>
+        </member>
+        <member name="M:exiii.ExArray.SetValue(exiii.Pointer{System.Single},System.Single)">
+            <summary>
+            Set float to the item specified by Pointer.
+            </summary>
+            <param name="pointer">A structure that specifies the type of data</param>
+            <param name="value">Value to set</param>
+        </member>
+        <member name="M:exiii.ExArray.GetArray(exiii.Pointer)">
+            <summary>
+            Get items specified by Pointer as byte [].
+            </summary>
+            <param name="pointer">Specify the type of data</param>
+        </member>
+        <member name="M:exiii.ExArray.SetArray(exiii.Pointer,System.Byte[],System.Int32)">
+            <summary>
+            Enter byte [] for the item specified by Pointer.
+            </summary>
+            <param name="pointer">Specify the type of data</param>
+            <param name="value">Byte string to be input</param>
+            <param name="index">Specify the index for the byte string to be input, and take the following as input</param>
+        </member>
+        <member name="M:exiii.ExArray.#ctor(System.Int32)">
+            <summary>
+            constructor
+            </summary>
+            <param name="size">Specify the size of the byte string</param>
+        </member>
+        <member name="M:exiii.ExArray.#ctor(System.Byte[])">
+            <summary>
+            constructor
+            </summary>
+            <param name="array">The passed byte string is used as Memory</param>
+        </member>
+        <member name="T:exiii.FroatFilter">
+            <summary>
+            Float type low pass filter
+            </summary>
+        </member>
+        <member name="P:exiii.FroatFilter.LastOutput">
+            <summary>
+            Last output value
+            </summary>
+        </member>
+        <member name="M:exiii.FroatFilter.#ctor(System.Single,System.Single)">
+            <summary>
+            constructor
+            </summary>
+            <param name="a">Specify the effective rate of last output</param>
+            <param name="initialValue"></param>
+        </member>
+        <member name="M:exiii.FroatFilter.Reset(System.Single)">
+            <summary>
+            Reset internal value
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:exiii.FroatFilter.Input(System.Single)">
+            <summary>
+            Enter a value
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="T:exiii.IniParser">
+            <summary>
+            A class that provides input and output to a text file for use as a configuration file
+            </summary>
+        </member>
+        <member name="P:exiii.IniParser.FilePath">
+            <summary>
+            File Path
+            </summary>
+        </member>
+        <member name="P:exiii.IniParser.Exists">
+            <summary>
+            Whether the file specified by the file path exists
+            </summary>
+        </member>
+        <member name="F:exiii.IniParser.Dictionaly">
+            <summary>
+            Collection that stores item name and setting value
+            </summary>
+        </member>
+        <member name="M:exiii.IniParser.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:exiii.IniParser"/> class without loading a file.
+            </summary>
+        </member>
+        <member name="M:exiii.IniParser.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:exiii.IniParser"/> class with loading a file.
+            </summary>
+            <param name="file">Name of the file you want to load.</param>
+        </member>
+        <member name="M:exiii.IniParser.Set(System.String,System.String)">
+            <summary>
+            Set item name and value
+            </summary>
+            <param name="key">Item name</param>
+            <param name="value">value</param>
+        </member>
+        <member name="M:exiii.IniParser.Get(System.String)">
+            <summary>
+            Acquire value from item name
+            </summary>
+            <param name="key">Item name</param>
+            <returns>value</returns>
+        </member>
+        <member name="M:exiii.IniParser.Save">
+            <summary>
+            Save the specified file.
+            </summary>
+        </member>
+        <member name="M:exiii.IniParser.Load">
+            <summary>
+            Load the specified file.
+            </summary>
+        </member>
+        <member name="T:exiii.Tools">
+            <summary>
+            Useful functions that can be used for static
+            </summary>
+        </member>
+        <member name="M:exiii.Tools.GetIPAddressOfHost(System.Net.IPAddress,System.Net.IPAddress)">
+            <summary>
+            Automatically determine its own IP address
+            When entering the network address part of the partner's IP address, it acquires the IP corresponding to the network address out of its own IP address
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:exiii.Tools.GetIPAddressOfHostAsString(System.Net.IPAddress,System.Net.IPAddress)">
+            <summary>
+            Automatically determine its own IP address
+            When entering the network address part of the partner's IP address, it acquires the IP corresponding to the network address out of its own IP address
+            </summary>
+            <returns>The network address part of the partner's IP address</returns>
+        </member>
+        <member name="M:exiii.Tools.GetNetworkAddress(System.Net.IPAddress,System.Net.IPAddress)">
+            <summary>
+            Automatically determine its own IP address
+            When entering the network address part of the partner's IP address, it acquires the IP corresponding to the network address out of its own IP address
+            </summary>
+            <returns>The network address part of the partner's IP address</returns>
+        </member>
+        <member name="M:exiii.Tools.GetNetworkAddress(System.Net.IPAddress)">
+            <summary>
+            From the input IP address, extract only the network address using the subnet mask
+            Use 255.255.255.0 as the subnet mask
+            </summary>
+            <param name="ip">Target IP address</param>
+            <returns>The obtained network address</returns>
+        </member>
+        <member name="M:exiii.Tools.map(System.Int64,System.Int64,System.Int64,System.Int64,System.Int64)">
+            <summary>
+            Obtains the converted value of the long type input value to the output range for the specified input range
+            </summary>
+            <param name="x">Input value</param>
+            <param name="in_A">Input range</param>
+            <param name="in_B">Input range</param>
+            <param name="out_A">Output range</param>
+            <param name="out_B">Output range</param>
+            <returns>Conversion value</returns>
+        </member>
+        <member name="M:exiii.Tools.map(System.Single,System.Single,System.Single,System.Single,System.Single)">
+            <summary>
+            Obtains the converted value of float type input value to output range for the specified input range
+            </summary>
+            <param name="x">Input value</param>
+            <param name="in_A">Input range</param>
+            <param name="in_B">Input range</param>
+            <param name="out_A">Output range</param>
+            <param name="out_B">Output range</param>
+            <returns>Conversion value</returns>
+        </member>
+        <member name="M:exiii.Tools.cut(System.Int64,System.Int64,System.Int64)">
+            <summary>
+            If the input value of type long is outside the range for the specified range, obtain the value converted to the range end
+            </summary>
+            <param name="x"></param>
+            <param name="valueA">Range end</param>
+            <param name="valueB">Range end</param>
+            <returns>Conversion value</returns>
+        </member>
+        <member name="M:exiii.Tools.cut(System.Single,System.Single,System.Single)">
+            <summary>
+            If the input value of type float is outside the range for the specified range, obtain the value converted to the range end
+            </summary>
+            <param name="x"></param>
+            <param name="valueA">Range end</param>
+            <param name="valueB">Range end</param>
+            <returns>Conversion value</returns>
+        </member>
+        <member name="M:exiii.Tools.mapcut(System.Int64,System.Int64,System.Int64,System.Int64,System.Int64)">
+            <summary>
+            Processing is performed by matching map and cut for long type input values
+            </summary>
+            <param name="x"></param>
+            <param name="in_A">Input range</param>
+            <param name="in_B">Input range</param>
+            <param name="out_A">Output range</param>
+            <param name="out_B">Output range</param>
+            <returns>Conversion value</returns>
+        </member>
+        <member name="M:exiii.Tools.mapcut(System.Single,System.Single,System.Single,System.Single,System.Single)">
+            <summary>
+            Processing is performed by matching map and cut for float type input values
+            </summary>
+            <param name="x"></param>
+            <param name="in_A">Input range</param>
+            <param name="in_B">Input range</param>
+            <param name="out_A">Output range</param>
+            <param name="out_B">Output range</param>
+            <returns>Conversion value</returns>
+        </member>
+        <member name="T:exiii.Async.SynchronizationContextRemover">
+            <summary>
+            Store current context and restore when return from current method
+            </summary>
+        </member>
+        <member name="P:exiii.Async.SynchronizationContextRemover.IsCompleted">
+            <summary>
+            Completed or not
+            </summary>
+        </member>
+        <member name="M:exiii.Async.SynchronizationContextRemover.OnCompleted(System.Action)">
+            <summary>
+            Callback on complete
+            </summary>
+            <param name="continuation"></param>
+        </member>
+        <member name="M:exiii.Async.SynchronizationContextRemover.GetAwaiter">
+            <summary>
+            Get awaiter
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:exiii.Async.SynchronizationContextRemover.GetResult">
+            <summary>
+            Get result
+            </summary>
+        </member>
+    </members>
+</doc>

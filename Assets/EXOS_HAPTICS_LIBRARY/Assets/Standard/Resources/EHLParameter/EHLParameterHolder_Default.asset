@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e21a577cdbfe314b8a7942fdf5e718c, type: 3}
+  m_Name: EHLParameterHolder_Default
+  m_EditorClassIdentifier: 
+  m_UseCopiedParameter: 1
+  m_PhysicsParameter: {fileID: 11400000, guid: bc2031275b2d1d24b980e3cd1b961660, type: 2}
+  m_FollowTargetParameter: {fileID: 11400000, guid: 849c83d0dd00c5b489467d1e100dab2b,
+    type: 2}
+  m_UseBrake: 0
+  m_MoveLimit: 0.1
+  m_RotateLimit: 3
+  m_UseSpring: 1
+  m_SpringType: 1
+  m_SpringForce: 10
+  m_SpringPower: 2
+  m_DrawLine: 0
+  m_UseJoint: 0

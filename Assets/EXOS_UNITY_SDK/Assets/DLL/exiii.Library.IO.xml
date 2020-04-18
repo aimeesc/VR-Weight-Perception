@@ -1,0 +1,1934 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>exiii.Library.IO</name>
+    </assembly>
+    <members>
+        <member name="T:exiii.Library.IO.Command">
+            <summary>
+            Commands used for communication by the memory map device (Byte column)
+            </summary>
+        </member>
+        <member name="F:exiii.Library.IO.Command.HeaderSize">
+            <summary>
+            Command header size
+            </summary>
+        </member>
+        <member name="F:exiii.Library.IO.Command.ChecksumSize">
+            <summary>
+            Command checksum size
+            </summary>
+        </member>
+        <member name="F:exiii.Library.IO.Command.ChecksumStartIndex">
+            <summary>
+            Index of header area to include in checksum
+            </summary>
+        </member>
+        <member name="F:exiii.Library.IO.Command.Default">
+            <summary>
+            Default value of Command
+            </summary>
+        </member>
+        <member name="M:exiii.Library.IO.Command.CalcCommandSize(System.Byte[])">
+            <summary>
+            Compute command size from command header byte string
+            </summary>
+            <param name="commandHeader">Byte sequence of command header</param>
+            <returns></returns>
+        </member>
+        <member name="M:exiii.Library.IO.Command.CalcCheckSum(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            Compute the checksum from the byte sequence of the command
+            </summary>
+            <param name="dataArray">Byte sequence of command</param>
+            <param name="start">Index of calculation start position of checksum</param>
+            <param name="end">Index of calculation end position of checksum</param>
+            <returns>Checksum calculation result</returns>
+        </member>
+        <member name="M:exiii.Library.IO.Command.Short(exiii.Library.IO.MMDevice,exiii.Pointer)">
+            <summary>
+            Generate a command to use when writing values ​​to one device
+            </summary>
+            <param name="data">Memory map device for generating the command</param>
+            <param name="map">Memory map area to be included in the command</param>
+            <returns>Generated command</returns>
+        </member>
+        <member name="M:exiii.Library.IO.Command.Long(exiii.Library.IO.MMDevice[],exiii.Pointer)">
+            <summary>
+            A command for simultaneously writing values ​​is generated for a plurality of devices existing in the same network
+            </summary>
+            <param name="datas">An array of memory map devices to generate a command</param>
+            <param name="map">Memory map area to be included in the command</param>
+            <returns>Generated command</returns>
+        </member>
+        <member name="M:exiii.Library.IO.Command.Demand(exiii.Library.IO.MMDevice,exiii.Pointer)">
+            <summary>
+            Generate a command to request a reply of the value to the memory map device
+            </summary>
+            <param name="data">Memory map device for generating the command</param>
+            <param name="map">Memory map area to be included in the command</param>
+            <returns>Generated command</returns>
+        </member>
+        <member name="M:exiii.Library.IO.Command.Reset(System.Byte)">
+            <summary>
+            A command for erasing the content of the nonvolatile area stored in the memory map device is generated
+            </summary>
+            <param name="DeviceID">DeviceID of the memory map device to generate the command</param>
+            <returns>Generated command</returns>
+        </member>
+        <member name="M:exiii.Library.IO.Command.Reset(exiii.Library.IO.MMDevice)">
+            <summary>
+            A command for erasing the content of the nonvolatile area stored in the memory map device is generated
+            </summary>
+            <param name="data">Memory map device for generating the command</param>
+            <returns>Generated command</returns>
+        </member>
+        <member name="M:exiii.Library.IO.Command.SetWakeup(System.Byte,System.Boolean)">
+            <summary>
+            Generate a command for set wakeup flag to the memory map device
+            </summary>
+            <param name="deviceID">DeviceID of the memory map device to generate the command</param>
+            <param name="wakeup">Device wakeup or not, when power supplied</param>
+            <returns>Generated command</returns>
+        </member>
+        <member name="M:exiii.Library.IO.Command.SetWakeup(exiii.Library.IO.MMDevice,System.Boolean)">
+            <summary>
+            Generate a command for set wakeup flag to the memory map device
+            </summary>
+            <param name="data">Memory map device for generating the command</param>
+            <param name="wakeup">Device wakeup or not, when power supplied</param>
+            <returns>Generated command</returns>
+        </member>
+        <member name="M:exiii.Library.IO.Command.Restart(System.Byte)">
+            <summary>
+            Generate a command for restarting the memory map device
+            </summary>
+            <param name="deviceID">DeviceID of the memory map device to generate the command</param>
+            <returns>Generated command</returns>
+        </member>
+        <member name="M:exiii.Library.IO.Command.Restart(exiii.Library.IO.MMDevice)">
+            <summary>
+            Generate a command for restarting the memory map device
+            </summary>
+            <param name="data">Memory map device for generating the command</param>
+            <returns>Generated command</returns>
+        </member>
+        <member name="M:exiii.Library.IO.Command.Shutdown(System.Byte)">
+            <summary>
+            Generate a command for shutdown the CommandBoard device
+            </summary>
+            <param name="deviceID">DeviceID of the CommandBoard to generate the command</param>
+            <returns>Generated command</returns>
+        </member>
+        <member name="M:exiii.Library.IO.Command.Shutdown(exiii.Library.IO.MMDevice)">
+            <summary>
+            Generate a command for shutdown the CommandBoard device
+            </summary>
+            <param name="data">CommandBoard to generate the command</param>
+            <returns>Generated command</returns>
+        </member>
+        <member name="M:exiii.Library.IO.Command.Write(System.Byte)">
+            <summary>
+            A command for recording the contents of the memory map written in the memory map device in the nonvolatile area is generated
+            </summary>
+            <param name="deviceID">DeviceID of the memory map device to generate the command</param>
+            <returns>Generated command</returns>
+        </member>
+        <member name="M:exiii.Library.IO.Command.Write(exiii.Library.IO.MMDevice)">
+            <summary>
+            A command for recording the contents of the memory map written in the memory map device in the nonvolatile area is generated
+            </summary>
+            <param name="data">Memory map device for generating the command</param>
+            <returns>Generated command</returns>
+        </member>
+        <member name="M:exiii.Library.IO.Command.SendString(exiii.Library.IO.CommandBoard,exiii.Library.IO.CommandBoard.StringIndex)">
+            <summary>
+            Commands for sending character string data to the memory map device
+            Commands dedicated to CommandBoard
+            </summary>
+            <param name="board">memory map device to generate the command</param>
+            <param name="index">Index of string list for specifying write target</param>
+            <returns>Generated command</returns>
+        </member>
+        <member name="M:exiii.Library.IO.Command.SendString(System.Byte,exiii.Library.IO.CommandBoard.StringIndex)">
+            <summary>
+            Commands for sending character string data to the memory map device
+            </summary>
+            <param name="deviceID">Memory map device for generating the command</param>
+            <param name="index">&gt; Index of string list for specifying write target</param>
+            <returns>Generated command</returns>
+        </member>
+        <member name="M:exiii.Library.IO.Command.DemandString(System.Byte,exiii.Library.IO.CommandBoard.StringIndex)">
+            <summary>
+            Commands for sending character string data to the memory map device
+            Commands dedicated to CommandBoard
+            </summary>
+            <param name="deviceID">DeviceID of the memory map device to generate the command</param>
+            <param name="index">Index of string list for specifying write target</param>
+            <returns>Generated command</returns>
+        </member>
+        <member name="M:exiii.Library.IO.Command.DemandString(exiii.Library.IO.MMDevice,exiii.Library.IO.CommandBoard.StringIndex)">
+            <summary>
+            Commands for sending character string data to the memory map device
+            Commands dedicated to CommandBoard
+            </summary>
+            <param name="device">Memory map device for generating the command</param>
+            <param name="index">Index of string list for specifying write target</param>
+            <returns>Generated command</returns>
+        </member>
+        <member name="M:exiii.Library.IO.Command.ChangeID(exiii.Library.IO.MMDevice,System.Byte)">
+            <summary>
+            Command for rewriting the ID of the memory map device
+            Use with an MMDevice instance with a new deviceID
+            </summary>
+            <param name="data">Memory map device with new device ID</param>
+            <param name="oldDeviceID">Current deviceID</param>
+            <returns></returns>
+        </member>
+        <member name="M:exiii.Library.IO.Command.MakeFlags(exiii.Library.IO.Command.EFlagsType,exiii.Library.IO.Command.EFlagsOption)">
+            <summary>
+            Make command flags using enum
+            </summary>
+            <param name="type">Flags type</param>
+            <param name="option">Option for each flags type</param>
+            <returns></returns>
+        </member>
+        <member name="M:exiii.Library.IO.Command.#ctor">
+            <summary>
+            constructor
+            </summary>
+        </member>
+        <member name="M:exiii.Library.IO.Command.#ctor(System.Byte[])">
+            <summary>
+            constructor
+            </summary>
+            <param name="data">Byte column used for memory area of ​​command</param>
+        </member>
+        <member name="M:exiii.Library.IO.Command.#ctor(System.Int32)">
+            <summary>
+            constructor
+            </summary>
+            <param name="size">Size of command memory area</param>
+        </member>
+        <member name="M:exiii.Library.IO.Command.#ctor(System.Byte[],System.Int32)">
+            <summary>
+            constructor
+            </summary>
+            <param name="data">Byte column copied to memory area of ​​command</param>
+            <param name="size">Size to copy</param>
+        </member>
+        <member name="M:exiii.Library.IO.Command.SetData(exiii.Library.IO.MMDevice,exiii.Pointer)">
+            <summary>
+            Copy and set data from the memory map area of ​​the specified memory map device for the command
+            </summary>
+            <param name="data"></param>
+            <param name="map"></param>
+        </member>
+        <member name="M:exiii.Library.IO.Command.SetData(exiii.Library.IO.MMDevice[],exiii.Pointer)">
+            <summary>
+            Copy and set data from the memory map area of ​​the specified multiple memory map devices for the command
+            </summary>
+            <param name="datas"></param>
+            <param name="map"></param>
+        </member>
+        <member name="M:exiii.Library.IO.Command.SetString(System.String,System.Text.Encoding)">
+            <summary>
+            For the command, copy and set the specified character string data with the specified character string code
+            </summary>
+            <param name="str">String data</param>
+            <param name="encoding"></param>
+        </member>
+        <member name="M:exiii.Library.IO.Command.SetString(System.String)">
+            <summary>
+            For the command, copy and set the specified character string data with the default character string code (UTF 8)
+            </summary>
+            <param name="str">String data</param>
+        </member>
+        <member name="M:exiii.Library.IO.Command.GetString(System.Text.Encoding)">
+            <summary>
+            Get string stored in the command
+            </summary>
+            <returns>String obtained</returns>
+        </member>
+        <member name="M:exiii.Library.IO.Command.GetString">
+            <summary>
+            Get string stored in the command
+            </summary>
+            <returns>String obtained</returns>
+        </member>
+        <member name="M:exiii.Library.IO.Command.CalcCheckSum">
+            <summary>
+            Calculate a checksum
+            </summary>
+            <returns>Checksum value</returns>
+        </member>
+        <member name="P:exiii.Library.IO.Command.IsValid">
+            <summary>
+            Flag to check if the command has a processable header
+            </summary>
+        </member>
+        <member name="P:exiii.Library.IO.Command.Header">
+            <summary>
+            Get a hedder as type of <seealso>HeaderType</seealso>
+            </summary>
+        </member>
+        <member name="P:exiii.Library.IO.Command.DeviceID">
+            <summary>
+            The target DeviceID
+            </summary>
+        </member>
+        <member name="P:exiii.Library.IO.Command.Flags">
+            <summary>
+            Get a flags as type of <seealso>FlagsType</seealso>
+            </summary>
+        </member>
+        <member name="P:exiii.Library.IO.Command.Address">
+            <summary>
+            The address of the memory map to be operated by the command
+            </summary>
+        </member>
+        <member name="P:exiii.Library.IO.Command.Length">
+            <summary>
+            The data size (per one device)
+            </summary>
+        </member>
+        <member name="P:exiii.Library.IO.Command.Count">
+            <summary>
+            Number of data subject to command operation
+            </summary>
+        </member>
+        <member name="P:exiii.Library.IO.Command.CheckSumIndex">
+            <summary>
+            Index indicating the position of the checksum
+            </summary>
+        </member>
+        <member name="P:exiii.Library.IO.Command.CheckSum">
+            <summary>
+            Checksum value
+            </summary>
+        </member>
+        <member name="P:exiii.Library.IO.Command.Pointer">
+            <summary>
+            Acquire the command operation target in the form of Pointer
+            </summary>
+        </member>
+        <member name="P:exiii.Library.IO.Command.TotalDataLength">
+            <summary>
+            Data length included in command
+            It does not include the size of header and checksum
+            </summary>
+        </member>
+        <member name="P:exiii.Library.IO.Command.TotalDataPointer">
+            <summary>
+            Pointer indicating the position of the data in the memory area inside the command is acquired
+            </summary>
+        </member>
+        <member name="T:exiii.Library.IO.Command.Map">
+            <summary>
+            Memory map of Command
+            </summary>
+        </member>
+        <member name="T:exiii.Library.IO.Command.HeaderType">
+            <summary>
+            A header area for recognizing the beginning of Command from the byte string
+            Represents the communication direction depending on the value type
+            </summary>
+        </member>
+        <member name="F:exiii.Library.IO.Command.HeaderType.Send">
+            <summary>
+            Header representing send command
+            </summary>
+        </member>
+        <member name="F:exiii.Library.IO.Command.HeaderType.Return">
+            <summary>
+            A header representing a reply command
+            </summary>
+        </member>
+        <member name="T:exiii.Library.IO.Command.EFlags">
+            <summary>
+            Header area indicating Command type
+            </summary>
+        </member>
+        <member name="T:exiii.Library.IO.Command.EFlagsType">
+            <summary>
+            Header area indicating Command type, using high 4bit in Flags
+            </summary>
+        </member>
+        <member name="F:exiii.Library.IO.Command.EFlagsType.Nomal">
+            <summary>
+            Commands for transmission
+            </summary>
+        </member>
+        <member name="F:exiii.Library.IO.Command.EFlagsType.Reset">
+            <summary>
+            Commands for resetting installation inside the device
+            </summary>
+        </member>
+        <member name="F:exiii.Library.IO.Command.EFlagsType.Control">
+            <summary>
+            Commands for restarting the device
+            </summary>
+        </member>
+        <member name="F:exiii.Library.IO.Command.EFlagsType.Write">
+            <summary>
+            Commands for recording the setting inside the device in the nonvolatile area
+            </summary>
+        </member>
+        <member name="F:exiii.Library.IO.Command.EFlagsType.String">
+            <summary>
+            Commands for sending character string settings inside the device
+            </summary>
+        </member>
+        <member name="T:exiii.Library.IO.Command.EFlagsOption">
+            <summary>
+            Option for Command type, using low 4bit in Flags
+            </summary>
+        </member>
+        <member name="F:exiii.Library.IO.Command.EFlagsOption.Nomal">
+            <summary>
+            No option
+            </summary>
+        </member>
+        <member name="F:exiii.Library.IO.Command.EFlagsOption.Demand">
+            <summary>
+            Option for reply request
+            </summary>
+        </member>
+        <member name="F:exiii.Library.IO.Command.EFlagsOption.CangeWakeUp">
+            <summary>
+            Option with control command, doing wake up after restart
+            </summary>
+        </member>
+        <member name="F:exiii.Library.IO.Command.EFlagsOption.WakeUp">
+             <summary>
+            Option with control command, doing wake up after restart
+             </summary>
+        </member>
+        <member name="F:exiii.Library.IO.Command.EFlagsOption.NotWakeUp">
+            <summary>
+            Option with control command, don't wake up after restart
+            </summary>
+        </member>
+        <member name="F:exiii.Library.IO.Command.EFlagsOption.Restart">
+            <summary>
+            Option with control command, doing restart
+            </summary>
+        </member>
+        <member name="F:exiii.Library.IO.Command.EFlagsOption.Shutdown">
+            <summary>
+            Option with control command, doing shutdown
+            </summary>
+        </member>
+        <member name="T:exiii.Library.IO.CommandExceptionKind">
+            <summary>
+            An enum representing exception content
+            </summary>
+        </member>
+        <member name="F:exiii.Library.IO.CommandExceptionKind.InsufficientReturn">
+            <summary>
+            Lack of response packet from serial servo is insufficient.
+            </summary>
+        </member>
+        <member name="F:exiii.Library.IO.CommandExceptionKind.ChecksumError">
+            <summary>
+            Checksum does not match.
+            </summary>
+        </member>
+        <member name="F:exiii.Library.IO.CommandExceptionKind.InvalidCommand">
+            <summary>
+            InvalidCommand.
+            </summary>
+        </member>
+        <member name="T:exiii.Library.IO.CommandException">
+            <summary>
+            Exception class.
+            </summary>
+        </member>
+        <member name="P:exiii.Library.IO.CommandException.Kind">
+            <summary>
+            It represents the type of exception.
+            </summary>
+        </member>
+        <member name="M:exiii.Library.IO.CommandException.#ctor(exiii.Library.IO.CommandExceptionKind,System.String)">
+            <summary>
+            constructor.
+            </summary>
+            <param name="kind">Set the type of exception.</param>
+            <param name="message">Set the type of exception.</param>
+        </member>
+        <member name="T:exiii.Library.IO.CommandBoard">
+            <summary>
+            exiii Class that provides access to the CommandBoard's memory map area
+            Synchronize (transmit and receive) the internal memory area with the target CommandBoard via the communication system class
+            </summary>
+        </member>
+        <member name="M:exiii.Library.IO.CommandBoard.GetCommandBoard(System.Byte)">
+            <summary>
+            Get an instance of CommandBoard class by specifying DeviceID
+            </summary>
+            <param name="deviceID">Device ID of target CommandBoard</param>
+            <returns></returns>
+        </member>
+        <member name="F:exiii.Library.IO.CommandBoard.AnalogueMax">
+            <summary>
+            Maximum sensor input of analog sensor
+            </summary>
+        </member>
+        <member name="F:exiii.Library.IO.CommandBoard.TorqueMax">
+            <summary>
+            Maximum motor output power
+            </summary>
+        </member>
+        <member name="F:exiii.Library.IO.CommandBoard.DacMax">
+            <summary>
+            Maximum value of DAC output
+            </summary>
+        </member>
+        <member name="P:exiii.Library.IO.CommandBoard.Enable">
+            <summary>
+            Memory area for turning on / off control of the entire command board
+            </summary>
+        </member>
+        <member name="P:exiii.Library.IO.CommandBoard.AnalogReadMin">
+            <summary>
+            The minimum value before conversion for input value of analog signal
+            </summary>
+        </member>
+        <member name="P:exiii.Library.IO.CommandBoard.AnalogReadMax">
+            <summary>
+            The maximum value before conversion for input value of analog signal
+            </summary>
+        </member>
+        <member name="P:exiii.Library.IO.CommandBoard.AnalogMapMin">
+            <summary>
+            The minimum value after conversion relative to the input value of the analog signal
+            </summary>
+        </member>
+        <member name="P:exiii.Library.IO.CommandBoard.AnalogMapMax">
+            <summary>
+            The maximum value after conversion relative to the input value of the analog signal
+            </summary>
+        </member>
+        <member name="P:exiii.Library.IO.CommandBoard.AnalogReadInvert">
+            <summary>
+            Flag for inverting the result against the input of the analog sensor
+            </summary>
+        </member>
+        <member name="P:exiii.Library.IO.CommandBoard.MotorControlMode">
+            <summary>
+            Flag for switching the motor control mode
+            </summary>
+        </member>
+        <member name="P:exiii.Library.IO.CommandBoard.MotorInvert">
+            <summary>
+            Flag for switching the motor rotation direction
+            </summary>
+        </member>
+        <member name="P:exiii.Library.IO.CommandBoard.GoalPosition">
+            <summary>
+            [Unimplemented] Target value for position control of the motor
+            </summary>
+        </member>
+        <member name="P:exiii.Library.IO.CommandBoard.PParameter">
+            <summary>
+            [Unimplemented] position control P parameter
+            </summary>
+        </member>
+        <member name="P:exiii.Library.IO.CommandBoard.DParameter">
+            <summary>
+            [Unimplemented] position control D parameter
+            </summary>
+        </member>
+        <member name="P:exiii.Library.IO.CommandBoard.GoalTorque">
+            <summary>
+            Target value for motor torque control
+            Specify a value from 0 to TorqueMax
+            </summary>
+        </member>
+        <member name="P:exiii.Library.IO.CommandBoard.TorqueLimit">
+            <summary>
+            Limit for torque output
+            </summary>
+        </member>
+        <member name="P:exiii.Library.IO.CommandBoard.Amplitude">
+            <summary>
+            [WIP] Amplitude for waveform control
+            </summary>
+        </member>
+        <member name="P:exiii.Library.IO.CommandBoard.Frequency">
+            <summary>
+            [WIP] Frequency for waveform control
+            </summary>
+        </member>
+        <member name="P:exiii.Library.IO.CommandBoard.Dac">
+            <summary>
+            DAC output target value
+            Specify a value from 0 to DacMax
+            </summary>
+        </member>
+        <member name="P:exiii.Library.IO.CommandBoard.DacEnable">
+            <summary>
+            Flag for setting ON / OFF of DAC control
+            </summary>
+        </member>
+        <member name="P:exiii.Library.IO.CommandBoard.RemoteIPArray">
+            <summary>
+            IP address of the communication partner side of CommandBoard used for WiFi communication
+            </summary>
+        </member>
+        <member name="P:exiii.Library.IO.CommandBoard.RemoteControlPort">
+            <summary>
+            Port of the communication partner side of CommandBoard used for WiFi communication
+            </summary>
+        </member>
+        <member name="P:exiii.Library.IO.CommandBoard.RemoteDataPort">
+            <summary>
+            Port of the communication partner side of CommandBoard used for WiFi communication
+            </summary>
+        </member>
+        <member name="P:exiii.Library.IO.CommandBoard.DeviceIPArray">
+            <summary>
+            IP address of CommandBoard side used for WiFi communication
+            Provided in the form of an array
+            </summary>
+        </member>
+        <member name="P:exiii.Library.IO.CommandBoard.DeviceIPAddless">
+            <summary>
+            IP address of CommandBoard side used for WiFi communication
+            </summary>
+        </member>
+        <member name="P:exiii.Library.IO.CommandBoard.SubnetMaskArray">
+            <summary>
+            SubnetMask of CommandBoard side used for WiFi communication
+            Provided in the form of an array
+            </summary>
+        </member>
+        <member name="P:exiii.Library.IO.CommandBoard.SubnetMask">
+            <summary>
+            SubnetMask of CommandBoard side used for WiFi communication
+            </summary>
+        </member>
+        <member name="P:exiii.Library.IO.CommandBoard.DeviceControlPort">
+            <summary>
+            Port on CommandBoard used for WiFi communication
+            </summary>
+        </member>
+        <member name="P:exiii.Library.IO.CommandBoard.DeviceDataPort">
+            <summary>
+            Port on CommandBoard used for WiFi communication
+            </summary>
+        </member>
+        <member name="P:exiii.Library.IO.CommandBoard.DeviceWiFiCh">
+            <summary>
+            Wi-Fi Channel on CommandBoard used for WiFi communication
+            </summary>
+        </member>
+        <member name="P:exiii.Library.IO.CommandBoard.SSID">
+            <summary>
+            SSID on CommandBoard used for WiFi communication
+            </summary>
+        </member>
+        <member name="P:exiii.Library.IO.CommandBoard.PASS">
+            <summary>
+            Password on CommandBoard used for WiFi communication
+            </summary>
+        </member>
+        <member name="P:exiii.Library.IO.CommandBoard.AnalogReadMapValue">
+            <summary>
+            The input value of the sensor is converted into a value between AnalogReadMin and AnalogReadMax and stored
+            </summary>
+        </member>
+        <member name="P:exiii.Library.IO.CommandBoard.AnalogReadRawValue">
+            <summary>
+            The input value of the sensor is stored as it is
+            </summary>
+        </member>
+        <member name="P:exiii.Library.IO.CommandBoard.AnalogReadFilteredValue">
+            <summary>
+            For the input value of the sensor, the value to which the low pass filter is applied is stored
+            </summary>
+        </member>
+        <member name="P:exiii.Library.IO.CommandBoard.CurrentPosition">
+            <summary>
+            [Unimplemented] Current value of position when the motor is position control
+            </summary>
+        </member>
+        <member name="P:exiii.Library.IO.CommandBoard.PositionValue">
+            <summary>
+            [Unimplemented] Current value of position additional parameter
+            </summary>
+        </member>
+        <member name="P:exiii.Library.IO.CommandBoard.CurrentTorque">
+            <summary>
+            [Unimplemented] Current value of torque when motor is torque control
+            </summary>
+        </member>
+        <member name="P:exiii.Library.IO.CommandBoard.TorqueValue">
+            <summary>
+            [Unimplemented] Current value of torque additional parameter
+            </summary>
+        </member>
+        <member name="M:exiii.Library.IO.CommandBoard.#ctor(System.Byte)">
+            <summary>
+            constructor
+            </summary>
+            <param name="id">ID of a CommandBoard</param>
+        </member>
+        <member name="M:exiii.Library.IO.CommandBoard.ImportCommand(exiii.Library.IO.Command)">
+            <summary>
+            Import tha command received to MMDevice
+            </summary>
+            <param name="command"></param>
+        </member>
+        <member name="M:exiii.Library.IO.CommandBoard.GetStringValue(exiii.Library.IO.CommandBoard.StringIndex)">
+            <summary>
+            Get string value stored in CommandBoard string array
+            </summary>
+            <param name="index"></param>
+            <returns>string</returns>
+        </member>
+        <member name="M:exiii.Library.IO.CommandBoard.SetStringValue(exiii.Library.IO.CommandBoard.StringIndex,System.String)">
+            <summary>
+            Get string value to CommandBoard string array
+            </summary>
+            <param name="index"></param>
+            <param name="str"></param>
+        </member>
+        <member name="T:exiii.Library.IO.CommandBoard.Map">
+            <summary>
+            exiii CommandBoard memory map
+            </summary>
+        </member>
+        <member name="F:exiii.Library.IO.CommandBoard.Map.MapSize">
+            <summary>
+            Size of the array representing the memory map area
+            </summary>
+        </member>
+        <member name="F:exiii.Library.IO.CommandBoard.Map.StringNumber">
+            <summary>
+            Number of the array representing the string area
+            </summary>
+        </member>
+        <member name="F:exiii.Library.IO.CommandBoard.Map.StringSize">
+            <summary>
+            Size of the array representing the string area
+            </summary>
+        </member>
+        <member name="F:exiii.Library.IO.CommandBoard.Map.AnalogNumber">
+            <summary>
+            Number of ports of analog sensor input
+            </summary>
+        </member>
+        <member name="F:exiii.Library.IO.CommandBoard.Map.MotorNumber">
+            <summary>
+            Number of ports of motor output
+            </summary>
+        </member>
+        <member name="F:exiii.Library.IO.CommandBoard.Map.DacNumber">
+            <summary>
+            Number of ports of DAC output
+            </summary>
+        </member>
+        <member name="F:exiii.Library.IO.CommandBoard.Map.IPNumber">
+            <summary>
+            Number of IP value
+            </summary>
+        </member>
+        <member name="T:exiii.Library.IO.CommandBoard.StringIndex">
+            <summary>
+            Index of character string dedicated memory area
+            </summary>
+        </member>
+        <member name="F:exiii.Library.IO.CommandBoard.StringIndex.SSID">
+            <summary>
+            When CommandBoard is started in WiFi mode, the SSID to be connected
+            </summary>
+        </member>
+        <member name="F:exiii.Library.IO.CommandBoard.StringIndex.PASS">
+            <summary>
+            Password required to connect when CommandBoard is started in WiFi mode
+            Password is valid when a character string of 8 or more characters is set
+            </summary>
+        </member>
+        <member name="T:exiii.Library.IO.CommandBoard.ModeEnable">
+            <summary>
+            Enum for setting Enable area
+            </summary>
+        </member>
+        <member name="F:exiii.Library.IO.CommandBoard.ModeEnable.None">
+            <summary>
+            Disabled
+            </summary>
+        </member>
+        <member name="F:exiii.Library.IO.CommandBoard.ModeEnable.Enable">
+            <summary>
+            Effectiveness
+            </summary>
+        </member>
+        <member name="F:exiii.Library.IO.CommandBoard.ModeEnable.Debug">
+            <summary>
+            Effectiveness with debug
+            </summary>
+        </member>
+        <member name="T:exiii.Library.IO.CommandBoard.ModeMotorControl">
+            <summary>
+            Enum for setting the MotorControlMode area
+            </summary>
+        </member>
+        <member name="F:exiii.Library.IO.CommandBoard.ModeMotorControl.None">
+            <summary>
+            Disabled
+            </summary>
+        </member>
+        <member name="F:exiii.Library.IO.CommandBoard.ModeMotorControl.TorqueA">
+            <summary>
+            Torque control mode
+            </summary>
+        </member>
+        <member name="F:exiii.Library.IO.CommandBoard.ModeMotorControl.PositionA">
+            <summary>
+            [Unimplemented] Position control mode
+            </summary>
+        </member>
+        <member name="F:exiii.Library.IO.CommandBoard.ModeMotorControl.TorqueB">
+            <summary>
+            Torque control mode
+            </summary>
+        </member>
+        <member name="F:exiii.Library.IO.CommandBoard.ModeMotorControl.PositionB">
+            <summary>
+            [Unimplemented] Position control mode
+            </summary>
+        </member>
+        <member name="T:exiii.Library.IO.CommandBoard.ModeDac">
+            <summary>
+            Enum for setting DacMode area
+            </summary>
+        </member>
+        <member name="F:exiii.Library.IO.CommandBoard.ModeDac.None">
+            <summary>
+            Disabled
+            </summary>
+        </member>
+        <member name="F:exiii.Library.IO.CommandBoard.ModeDac.Enable">
+            <summary>
+            Effectiveness
+            </summary>
+        </member>
+        <member name="T:exiii.Library.IO.CommandPortBase">
+            <summary>
+            Base class of CommandPort
+            </summary>
+        </member>
+        <member name="F:exiii.Library.IO.CommandPortBase.DefaultTimeout">
+            <summary>
+            Timeout value in default as milisec
+            </summary>
+        </member>
+        <member name="P:exiii.Library.IO.CommandPortBase.DefaultPollingClock">
+            <summary>
+            Use as default PollingClock
+            </summary>
+        </member>
+        <member name="P:exiii.Library.IO.CommandPortBase.IsConnected">
+            <summary>
+            This command port is active or not
+            </summary>
+        </member>
+        <member name="P:exiii.Library.IO.CommandPortBase.UsedBy">
+            <summary>
+            DeviceID of the device use this CommandPort
+            </summary>
+        </member>
+        <member name="P:exiii.Library.IO.CommandPortBase.PollingClock">
+            <summary>
+            Used PollingClock
+            </summary>
+        </member>
+        <member name="P:exiii.Library.IO.CommandPortBase.Timeout">
+            <summary>
+            The numerical value of Timeout given in ms
+            </summary>
+        </member>
+        <member name="F:exiii.Library.IO.CommandPortBase.m_ErrorCount">
+            <summary>
+            Countup when failse to connection
+            </summary>
+        </member>
+        <member name="P:exiii.Library.IO.CommandPortBase.ErrorCount">
+            <summary>
+            Countup failse to connection
+            </summary>
+        </member>
+        <member name="P:exiii.Library.IO.CommandPortBase.PollingRate">
+            <summary>
+            Used PollingRate
+            </summary>
+        </member>
+        <member name="M:exiii.Library.IO.CommandPortBase.#ctor(System.Int32)">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:exiii.Library.IO.CommandPortBase.RequestMessageID">
+            <summary>
+            Issue the ID of the message for discriminating the received packet
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:exiii.Library.IO.CommandPortBase.SendCommandAsync(exiii.Library.IO.Command)">
+            <summary>
+            Send command and wait return command async
+            </summary>
+            <param name="command"></param>
+            <returns></returns>
+        </member>
+        <member name="M:exiii.Library.IO.CommandPortBase.SendCommandAsync(System.Collections.Generic.IEnumerable{exiii.Library.IO.Command})">
+            <summary>
+            Send commands and wait return commands async
+            </summary>
+            <param name="commands"></param>
+            <returns></returns>
+        </member>
+        <member name="M:exiii.Library.IO.CommandPortBase.ChangePollingRate(System.TimeSpan)">
+            <summary>
+            Change rate of PollingClock
+            </summary>
+            <param name="span"></param>
+        </member>
+        <member name="P:exiii.Library.IO.CommandPortBase.Disposed">
+            <summary>
+            Callback when disposing 
+            </summary>
+        </member>
+        <member name="M:exiii.Library.IO.CommandPortBase.Dispose">
+            <summary>
+            Implementation of IDisposable
+            </summary>
+        </member>
+        <member name="M:exiii.Library.IO.CommandPortBase.Dispose(System.Object,System.EventArgs)">
+            <summary>
+            Implementation of IDisposable for EventHandler
+            </summary>
+            <param name="sender"></param>
+            <param name="args"></param>
+        </member>
+        <member name="M:exiii.Library.IO.CommandPortBase.Dispose(System.Boolean)">
+            <summary>
+            Implementation of IDisposable
+            </summary>
+            <param name="disposing"></param>
+        </member>
+        <member name="T:exiii.Library.IO.CommandServo">
+            <summary>
+            Class providing access to the memory map area of ​​Futaba CommandServo
+            Synchronize (transmit and receive) the internal memory area with the target CommandServo via the communication system class
+            </summary>
+        </member>
+        <member name="M:exiii.Library.IO.CommandServo.GetCommandServo(System.Byte)">
+            <summary>
+            Get an instance of CommandServo class by specifying DeviceID
+            </summary>
+            <param name="deviceID">Device ID of target CommandServo</param>
+            <returns></returns>
+        </member>
+        <member name="P:exiii.Library.IO.CommandServo.ServoID">
+            <summary>
+            Device ID of CommandServo
+            </summary>
+        </member>
+        <member name="P:exiii.Library.IO.CommandServo.Reverse">
+            <summary>
+            Flag for reversing the rotation direction of the motor
+            </summary>
+        </member>
+        <member name="P:exiii.Library.IO.CommandServo.GoalPosition">
+            <summary>
+            Indicate the location
+            You can move the servo to the indicated angle. The CW (clockwise rotation) direction is &quot;+&quot; and the CCW (counterclockwise rotation) is &quot;-&quot; when the center of the movable range is 0 degree and viewed from the servo upper surface (the side with the nameplate) The unit of the target position is 0.1 degree The setting range is -150.0 degrees to + 150.0 degrees. Angle command received at torque off is ignored by torque on holding function. Also, when receiving a packet specifying torque-on and target position simultaneously from the torque-off state, the angle command is ignored. If the reverse of No. 5 is 01H, the CW direction is &quot;-&quot; and the CCW is &quot;+&quot;. Also, if you specify an angle larger than the limit angle set for No. 8 to 11 as the target position, it will operate up to this limit angle.
+            </summary>
+        </member>
+        <member name="P:exiii.Library.IO.CommandServo.GoalTime">
+            <summary>
+            Indicate the time
+            You can set the servo movement time to the target position. Set it in units of 10 ms. If the command value exceeds the servo's maximum speed, it operates at maximum speed. The setting range is 0 to 3FFFH. Please note that when setting an extremely long time, there is a maximum error of 0.5% in each servo.
+            </summary>
+        </member>
+        <member name="P:exiii.Library.IO.CommandServo.MaxTorque">
+            <summary>
+            Maximum torque
+            You can set the maximum torque output by the servo. With the torque of the servo described in the standard of this manual as 100%, it can be set in 1% unit, but think about the value as a rough guideline. The initial value is 64H (100%), and the settable range is 00H to 64H
+            </summary>
+        </member>
+        <member name="P:exiii.Library.IO.CommandServo.TorqueEnable">
+            <summary>
+            Torque ON
+            The servo torque can be turned ON and OFF. Torque is ON at 01 H and torque OFF at 00 H. Torque OFF (00H) is set at power on. Also, when set to 02 H, the brake mode is entered and the servo horn can be freely rotated by hand, but weak torque is generated. When the output shaft is in the dead zone (p.11), the value of torque ON will always be 00H and commands to change to 01H or 02H will not be accepted. When an external force is applied while operating in the torque ON state, the torque is automatically turned OFF when the output shaft reaches the dead zone. In order to turn the torque ON again, it is necessary to apply a force from the outside to the output shaft and rotate it to the detectable range before transmitting the torque ON command.
+            </summary>
+        </member>
+        <member name="P:exiii.Library.IO.CommandServo.PresentPosition">
+            <summary>
+            Now location
+            You can know the servo's current angle. Angle information of the current position can be obtained in 0.1 degree increments in the range of -160 degrees in the CCW (counterclockwise rotation) direction and 160 degrees in the CW (clockwise rotation) direction with the center of the movable range as 0 degree . When the angle of the servo is in the dead zone (p. 11), the current position value is 15 B 3 H (555.5 °).
+            </summary>
+        </member>
+        <member name="P:exiii.Library.IO.CommandServo.PresentTime">
+            <summary>
+            current time
+            The current time is the elapsed time since the servo received the command and started moving. When the move is completed it will hold the last time.
+            </summary>
+        </member>
+        <member name="P:exiii.Library.IO.CommandServo.PresentSpeed">
+            <summary>
+            Current speed
+            ※ Please use this value as a guide only. You can know the current rotation speed of the servo in degrees / sec. Since it represents the speed of the moment, it may differ from the calculated value from the specified value in No. 30 - No.33.
+            </summary>
+        </member>
+        <member name="P:exiii.Library.IO.CommandServo.PresentCurrent">
+            <summary>
+            Now load
+            ※ Please use this value as a guide only. The servo load (current) is expressed in mA. Since it is measuring the current supplied to the servo, it will not become 0 even in the torque OFF state.
+            </summary>
+        </member>
+        <member name="P:exiii.Library.IO.CommandServo.PresentTemperature">
+            <summary>
+            Now the temperature
+            It represents the temperature on the servo's board. There are individual differences in the temperature sensor, and there is an error of roughly ± 3 ° C. At the same time as the temperature error flag rises when the alarm flag rises from 10 ° C before the set value of the temperature limit (p.31), the servo automatically becomes the brake mode (slightly torqued state) I will. When in brake mode, the value of &quot;Torque ON&quot; in memory map No.36 becomes &quot;2&quot; (p.36). Once the temperature limit function is activated, the torque on command will not be accepted unless you reset the servo or turn the power on again. Please use after the temperature of the servo is sufficiently lowered. Also, when the temperature limit function is activated, the temperature near the servo motor is around 120 ° C to 140 ° C, so be careful of burns etc.
+            </summary>
+        </member>
+        <member name="P:exiii.Library.IO.CommandServo.PresentVolts">
+            <summary>
+            Current voltage
+            It represents the voltage of the power supply currently supplied to the servo. Although it is shown in 10 mV unit, there are individual differences in the voltage sensor, and there is an error of approximately ± 0.3 V.
+            </summary>
+        </member>
+        <member name="M:exiii.Library.IO.CommandServo.#ctor(System.Byte)">
+            <summary>
+            constructor
+            </summary>
+            <param name="deviceID">CommandServo ID</param>
+        </member>
+        <member name="T:exiii.Library.IO.CommandServo.Map">
+            <summary>
+            Memory map of Futaba CommandServo
+            </summary>
+        </member>
+        <member name="F:exiii.Library.IO.CommandServo.Map.MapSize">
+            <summary>
+            Size of the array representing the memory map area
+            </summary>
+        </member>
+        <member name="T:exiii.Library.IO.ICommandPort">
+            <summary>
+            Interface for communication class to share processing of sending commands
+            </summary>
+        </member>
+        <member name="P:exiii.Library.IO.ICommandPort.IsConnected">
+            <summary>
+            This command port is active or not
+            </summary>
+        </member>
+        <member name="P:exiii.Library.IO.ICommandPort.UsedBy">
+            <summary>
+            DeviceID of the device use this CommandPort
+            </summary>
+        </member>
+        <member name="P:exiii.Library.IO.ICommandPort.Timeout">
+            <summary>
+            The numerical value of Timeout given in ms
+            </summary>
+        </member>
+        <member name="P:exiii.Library.IO.ICommandPort.ErrorCount">
+            <summary>
+            Countup when failse to connection
+            </summary>
+        </member>
+        <member name="P:exiii.Library.IO.ICommandPort.PollingRate">
+            <summary>
+            Used PollingRate
+            </summary>
+        </member>
+        <member name="M:exiii.Library.IO.ICommandPort.SendCommandAsync(exiii.Library.IO.Command)">
+            <summary>
+            Send a command
+            </summary>
+            <param name="command">Commands sent</param>
+            <returns>Whether the transmission was successful</returns>
+        </member>
+        <member name="M:exiii.Library.IO.ICommandPort.SendCommandAsync(System.Collections.Generic.IEnumerable{exiii.Library.IO.Command})">
+             <summary>
+            
+             </summary>
+             <param name="commands"></param>
+             <returns></returns>
+        </member>
+        <member name="P:exiii.Library.IO.ICommandPort.Disposed">
+            <summary>
+            Callback when disposing
+            </summary>
+        </member>
+        <member name="T:exiii.Library.IO.MMDevice">
+            <summary>
+            Base class of handling memory map device
+            </summary>
+        </member>
+        <member name="F:exiii.Library.IO.MMDevice.MasterID">
+            <summary>
+            A special DeviceID requesting return even if DeviceID does not match
+            </summary>
+        </member>
+        <member name="F:exiii.Library.IO.MMDevice.MMDeviceDic">
+            <summary>
+            Collection containing a list of instances of memory map device
+            </summary>
+        </member>
+        <member name="F:exiii.Library.IO.MMDevice.RecieveInvalidCommand">
+            <summary>
+            An event called when a packet with an ID that does not exist is received
+            </summary>
+        </member>
+        <member name="M:exiii.Library.IO.MMDevice.Import(exiii.Library.IO.Command,exiii.Library.IO.ICommandPort)">
+            <summary>
+            Reflect the contents of the received packet in the instance of the memory map device
+            It is reflected in the memory map device instance of the deviceID specified inside the packet
+            In case of failure, throw Exception
+            </summary>
+            <param name="command">Command to reflect on memory map device</param>
+            <param name="port"></param>
+        </member>
+        <member name="M:exiii.Library.IO.MMDevice.TryImport(exiii.Library.IO.Command)">
+            <summary>
+            Reflect the contents of the received packet in the instance of the memory map device
+            If it fails, it returns false to the return value
+            </summary>
+            <param name="command">Command to reflect on memory map device</param>
+            <returns></returns>
+        </member>
+        <member name="M:exiii.Library.IO.MMDevice.GetMMDevice(System.Byte)">
+            <summary>
+            Retrieve an instance of a memory map device
+            </summary>
+            <param name="deviceID">DeviceID of the memory map device to be acquired</param>
+            <returns></returns>
+        </member>
+        <member name="M:exiii.Library.IO.MMDevice.CheckDeviceID(System.Int32)">
+            <summary>
+            Check DeviceID is Valid
+            </summary>
+            <param name="ID">DeviceID</param>
+            <returns></returns>
+        </member>
+        <member name="P:exiii.Library.IO.MMDevice.DeviceType">
+            <summary>
+            Type information to determine the type of inherited class
+            </summary>
+        </member>
+        <member name="P:exiii.Library.IO.MMDevice.ModelNo">
+            <summary>
+            Model number of memory map device
+            </summary>
+        </member>
+        <member name="P:exiii.Library.IO.MMDevice.Firmware">
+            <summary>
+            Firmware version of memory map device
+            </summary>
+        </member>
+        <member name="P:exiii.Library.IO.MMDevice.DeviceID">
+            <summary>
+            Device ID of memory map device
+            </summary>
+        </member>
+        <member name="P:exiii.Library.IO.MMDevice.BaudRate">
+            <summary>
+            Index for specifying BaudRate when the memory map device performs serial communication
+            Specify Index to use from BaudRate list
+            </summary>
+        </member>
+        <member name="P:exiii.Library.IO.MMDevice.ReturnDelay">
+            <summary>
+            The Delay time from when a memory map device receives a reply request until reply to it is specified in ms
+            </summary>
+        </member>
+        <member name="M:exiii.Library.IO.MMDevice.#ctor(System.Type,System.Byte,System.Int32)">
+            <summary>
+            constructor
+            </summary>
+            <param name="type">Type information of the class inheriting the memory map device</param>
+            <param name="deviceID">Device ID of memory map device</param>
+            <param name="size">Specify the memory size built in the memory map device</param>
+        </member>
+        <member name="M:exiii.Library.IO.MMDevice.ImportCommand(exiii.Library.IO.Command)">
+            <summary>
+            Reflect the contents of the received packet in the instance of the memory map device
+            </summary>
+            <param name="command">Command to reflect on memory map device</param>
+        </member>
+        <member name="M:exiii.Library.IO.MMDevice.SearchDeviceIDAsync(exiii.Library.IO.ICommandPort)">
+            <summary>
+            Search DeviceID of the device connected to CommandPort
+            </summary>
+            <param name="port">Serch target CommandPort</param>
+            <returns></returns>
+        </member>
+        <member name="M:exiii.Library.IO.MMDevice.ChangeDeviceIDAsync(exiii.Library.IO.ICommandPort,System.Byte)">
+            <summary>
+            Send change DeviceID command and wait return packet async
+            </summary>
+            <param name="port">Used CommandPort</param>
+            <param name="oldID">Target deviceID</param>
+            <returns>Task</returns>
+        </member>
+        <member name="M:exiii.Library.IO.MMDevice.Dispose">
+            <summary>
+            Implementation of IDispose
+            </summary>
+        </member>
+        <member name="M:exiii.Library.IO.MMDevice.Dispose(System.Boolean)">
+            <summary>
+            Implementation of IDispose
+            </summary>
+        </member>
+        <member name="T:exiii.Library.IO.MMDevice.Map">
+            <summary>
+            Address list for accessing memory map
+            </summary>
+        </member>
+        <member name="P:exiii.Library.IO.MMDevice.Map.ModelNo">
+            <summary>
+            Address of model number of memory map device
+            </summary>
+        </member>
+        <member name="P:exiii.Library.IO.MMDevice.Map.Firmware">
+            <summary>
+            Address of firmware version of memory map device
+            </summary>
+        </member>
+        <member name="P:exiii.Library.IO.MMDevice.Map.DeviceID">
+            <summary>
+            Address of the device ID of the memory map device
+            </summary>
+        </member>
+        <member name="P:exiii.Library.IO.MMDevice.Map.BaudRate">
+            <summary>
+            Address of Index for specifying BaudRate when the memory map device performs serial communication
+            Specify Index to use from BaudRate list
+            </summary>
+        </member>
+        <member name="P:exiii.Library.IO.MMDevice.Map.ReturnDelay">
+            <summary>
+            The address of the delay time from when the memory map device receives a reply request until it reply
+            Specify the time in ms
+            </summary>
+        </member>
+        <member name="T:exiii.Library.IO.OscConnection">
+            <summary>
+            Class for data communication of OSC communication as ICommandPort
+            </summary>
+        </member>
+        <member name="P:exiii.Library.IO.OscConnection.OscDicOfAllType">
+            <summary>
+            Collection containing a list of OscConnection instances. Key is DeviceID.
+            </summary>
+        </member>
+        <member name="M:exiii.Library.IO.OscConnection.GetOscConnection(exiii.Library.IO.ICommandPort)">
+            <summary>
+            Get the OscConnection of the specified LocalPort
+            If connection can not be obtained, null is returned
+            </summary>
+            <param name="port">Target command port</param>
+            <returns>Obtained OscConnection</returns>
+        </member>
+        <member name="M:exiii.Library.IO.OscConnection.TryGetOscConnection(exiii.Library.IO.ICommandPort,exiii.Library.IO.OscConnection@)">
+            <summary>
+            Try to get the OscConnection of the specified LocalPort
+            </summary>
+            <param name="port">Target command port</param>
+            <param name="connection">Connection obtained</param>
+            <returns>Whether you could get the target</returns>
+        </member>
+        <member name="P:exiii.Library.IO.OscConnection.RemoteIP">
+            <summary>
+            IP address of communication partner
+            </summary>
+        </member>
+        <member name="P:exiii.Library.IO.OscConnection.RemotePort">
+            <summary>
+            Port number of communication partner
+            </summary>
+        </member>
+        <member name="P:exiii.Library.IO.OscConnection.LocalPort">
+            <summary>
+            Port number on your side
+            </summary>
+        </member>
+        <member name="M:exiii.Library.IO.OscConnection.#ctor(System.Int32)">
+            <summary>
+            constructor
+            </summary>
+            <param name="timeout">Timeout for read/write</param>
+        </member>
+        <member name="M:exiii.Library.IO.OscConnection.SetSender(System.Net.IPAddress,System.Net.IPAddress,System.Int32)">
+            <summary>
+            Register the connection destination
+            </summary>
+            <param name="localIP">IP address of the this side</param>
+            <param name="remoteIP">IP address of the other party</param>
+            <param name="remotePort">Port number of the other party</param>
+        </member>
+        <member name="M:exiii.Library.IO.OscConnection.Finalize">
+            <summary>
+            Destructor
+            </summary>
+        </member>
+        <member name="M:exiii.Library.IO.OscConnection.Dispose(System.Boolean)">
+            <summary>
+            Implementation of IDisposable
+            </summary>
+        </member>
+        <member name="T:exiii.Library.IO.OscConnection`1">
+            <summary>
+            Class for data communication of OSC communication
+            Implement ICommandPort
+            </summary>
+        </member>
+        <member name="P:exiii.Library.IO.OscConnection`1.OscDic">
+            <summary>
+            Collection containing a list of OscConnection instances
+            Key is LocalPortNumber
+            </summary>
+        </member>
+        <member name="M:exiii.Library.IO.OscConnection`1.TrySetOscConnection(`0)">
+            <summary>
+            Try add connection to dictionary maneged all connection
+            </summary>
+            <param name="connection"></param>
+            <returns>Whether you could set the target</returns>
+        </member>
+        <member name="M:exiii.Library.IO.OscConnection`1.TryGetOscConnection(exiii.Library.IO.ICommandPort,`0@)">
+            <summary>
+            Try to get the OscConnection of the specified LocalPort
+            </summary>
+            <param name="port">Target command port</param>
+            <param name="connection">Connection obtained</param>
+            <returns>Whether you could get the target</returns>
+        </member>
+        <member name="M:exiii.Library.IO.OscConnection`1.#ctor(System.Int32)">
+            <summary>
+            constructor
+            </summary>
+            <param name="timeout"></param>
+        </member>
+        <member name="M:exiii.Library.IO.OscConnection`1.Finalize">
+            <summary>
+            Destructor
+            </summary>
+        </member>
+        <member name="M:exiii.Library.IO.OscConnection`1.Dispose(System.Boolean)">
+            <summary>
+            Implementation of IDisposable
+            </summary>
+        </member>
+        <member name="T:exiii.Library.IO.OscManager">
+            <summary>
+            Singleton class for controlling communication of Osc communication
+            </summary>
+        </member>
+        <member name="F:exiii.Library.IO.OscManager.DefaultControlPort">
+            <summary>
+            Default contorol port
+            </summary>
+        </member>
+        <member name="F:exiii.Library.IO.OscManager.DefaultDataPortStart">
+            <summary>
+            Default data port start this and count up each device
+            </summary>
+        </member>
+        <member name="F:exiii.Library.IO.OscManager.DefaultTimeout">
+            <summary>
+            The numerical value of Timeout given in ms
+            </summary>
+        </member>
+        <member name="P:exiii.Library.IO.OscManager.Instance">
+            <summary>
+            Reference to the instance
+            </summary>
+        </member>
+        <member name="F:exiii.Library.IO.OscManager.ControlPort">
+            <summary>
+            Port number used for control communication
+            </summary>
+        </member>
+        <member name="F:exiii.Library.IO.OscManager.DataPortStart">
+            <summary>
+            Start value of port number used for data communication
+            </summary>
+        </member>
+        <member name="M:exiii.Library.IO.OscManager.#ctor(System.Int32,System.Int32)">
+            <summary>
+            constructor with ControlPort and DataPortStart
+            </summary>
+            <param name="controlPort">Port number used for control communication</param>
+            <param name="dataPortStart">Start value of port number used for data communication</param>
+        </member>
+        <member name="M:exiii.Library.IO.OscManager.RequestPortNumber">
+            <summary> 
+            Issue port number used for data communication
+            </summary>
+            <returns>Port number obtained</returns>
+        </member>
+        <member name="M:exiii.Library.IO.OscManager.ReturnPortNumber(System.Int32)">
+            <summary>
+            Return port number after connection finished
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:exiii.Library.IO.OscManager.SetSender(System.Net.IPAddress,System.Net.IPAddress,System.Int32)">
+            <summary>
+            Add OscSenderFacade to collection
+            </summary>
+            <param name="localIP">Key localIP</param>
+            <param name="deviceIP">Register device IPAddress</param>
+            <param name="devicePort">Register device control port</param>
+        </member>
+        <member name="M:exiii.Library.IO.OscManager.OscOpenRegisteredAsync(System.Net.IPAddress,System.Int32,System.Int32)">
+            <summary>
+            Generate an OscConnection for the specified DeviceID
+            Sender corresponding to Device ID needs to be registered
+            If generation fails, Null is returned.
+            </summary>
+        </member>
+        <member name="M:exiii.Library.IO.OscManager.OscOpenAsync(System.Net.IPAddress,System.Net.IPAddress,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Generate an OscConnection for the specified DeviceID
+            Specify the IP address of the device
+            If generation fails, Null is returned.
+            </summary>
+            <param name="localIP">Specify the IP address of the host. If not specified, the IP address is automatically acquired</param>
+            <param name="deviceIP">IP address of Device to be communicated</param>
+            <param name="devicePort"> Control port of Device to be communicated</param>
+            <param name="controlTimeout"></param>
+            <param name="dataTimeout"></param>
+            <returns>Generated OscConnection</returns>
+        </member>
+        <member name="M:exiii.Library.IO.OscManager.OscCloseAsync(exiii.Library.IO.ICommandPort,System.Single,System.Boolean)">
+            <summary>
+            Generate an OscConnection for the specified DeviceID
+            </summary>
+        </member>
+        <member name="M:exiii.Library.IO.OscManager.Dispose">
+            <summary>
+            Implementation of IDisposable
+            </summary>
+        </member>
+        <member name="M:exiii.Library.IO.OscManager.Dispose(System.Boolean)">
+            <summary>
+            Implementation of IDisposable
+            </summary>
+            <param name="disposing"></param>
+        </member>
+        <member name="T:exiii.Library.IO.SharpOscConnection">
+            <summary>
+            Class for data communication of OSC communication
+            Implement ICommandPort
+            </summary>
+        </member>
+        <member name="P:exiii.Library.IO.SharpOscConnection.RemoteIP">
+            <summary>
+            IP address of communication partner
+            </summary>
+        </member>
+        <member name="P:exiii.Library.IO.SharpOscConnection.RemotePort">
+            <summary>
+            Port number of communication partner
+            </summary>
+        </member>
+        <member name="P:exiii.Library.IO.SharpOscConnection.LocalPort">
+            <summary>
+            Port number on your side
+            </summary>
+        </member>
+        <member name="P:exiii.Library.IO.SharpOscConnection.IsConnected">
+            <summary>
+            Properties representing connection status
+            </summary>
+        </member>
+        <member name="M:exiii.Library.IO.SharpOscConnection.#ctor(System.Int32,System.Int32)">
+            <summary>
+            constructor
+            Start standby at the specified port number
+            </summary>
+            <param name="localPort">Port number on your side</param>
+            <param name="timeout"></param>
+        </member>
+        <member name="M:exiii.Library.IO.SharpOscConnection.#ctor(System.Net.IPAddress,System.Int32,System.Net.IPAddress,System.Int32,System.Int32)">
+            <summary>
+            constructor
+            Start standby at the specified port number
+            Register the connection destination
+            </summary>
+            <param name="localIP">IP address of the this side</param>
+            <param name="LocalPort">Port number on your side</param>
+            <param name="remoteIP">IP address of the other party</param>
+            <param name="remotePort">Port number of the other party</param>
+            <param name="timeout"></param>
+        </member>
+        <member name="M:exiii.Library.IO.SharpOscConnection.SetSender(System.Net.IPAddress,System.Net.IPAddress,System.Int32)">
+            <summary>
+            Register the connection destination
+            </summary>
+            <param name="localIP"></param>
+            <param name="remoteIP">IP address of the other party</param>
+            <param name="remotePort">Port number of the other party</param>
+        </member>
+        <member name="M:exiii.Library.IO.SharpOscConnection.SendCommandAsync(exiii.Library.IO.Command)">
+            <summary>
+            Send a command async
+            </summary>
+            <param name="command"></param>
+            <returns></returns>
+        </member>
+        <member name="M:exiii.Library.IO.SharpOscConnection.SendCommandAsync(System.Collections.Generic.IEnumerable{exiii.Library.IO.Command})">
+            <summary>
+            Send a command async
+            </summary>
+            <param name="commands">Command to send</param>
+            <returns></returns>
+        </member>
+        <member name="P:exiii.Library.IO.SharpOscConnection.Disposed">
+            <summary>
+            Callback when disposed 
+            </summary>
+        </member>
+        <member name="M:exiii.Library.IO.SharpOscConnection.Finalize">
+            <summary>
+            Destructor
+            </summary>
+        </member>
+        <member name="M:exiii.Library.IO.SharpOscConnection.Dispose(System.Boolean)">
+            <summary>
+            Implementation of IDisposable
+            </summary>
+        </member>
+        <member name="T:exiii.Library.IO.SharpOscManager">
+            <summary>
+            Singleton class for controlling communication of Osc communication
+            </summary>
+        </member>
+        <member name="M:exiii.Library.IO.SharpOscManager.CreateInstance(System.Int32,System.Int32)">
+            <summary>
+            A function for creating an instance whose initial value has been changed
+            </summary>
+            <param name="contorolPort">Control port number</param>
+            <param name="dataPortStart">Starting value of data port number</param>
+            <returns>Manager obtained</returns>
+        </member>
+        <member name="P:exiii.Library.IO.SharpOscManager.OscSenderDic">
+            <summary>
+            The dictionary contain all osc connection exsist. 
+            </summary>
+        </member>
+        <member name="M:exiii.Library.IO.SharpOscManager.Finalize">
+            <summary>
+            Destructor
+            </summary>
+        </member>
+        <member name="M:exiii.Library.IO.SharpOscManager.SetSender(exiii.Library.IO.SharpOscSenderFacade)">
+            <summary>
+            Add OscSenderFacade to collection
+            </summary>
+            <param name="sender">Register OscSenderFacade</param>
+        </member>
+        <member name="M:exiii.Library.IO.SharpOscManager.SetSender(System.Net.IPAddress,System.Net.IPAddress,System.Int32)">
+            <summary>
+            Add OscSenderFacade to collection managing all connection
+            OscSenderFacade is created by combination of input IP address and control port
+            </summary>
+            <param name="localIP">IP address of the local network</param>
+            <param name="deviceIP">IP address of the other party to register</param>
+            <param name="deviceControlPort">Subnetmask of the network</param>
+        </member>
+        <member name="M:exiii.Library.IO.SharpOscManager.RemoveSender(exiii.Library.IO.SharpOscSenderFacade)">
+            <summary>
+            Remove OscSenderFacade from collection managing all connection
+            </summary>
+            <param name="sender"></param>
+        </member>
+        <member name="M:exiii.Library.IO.SharpOscManager.OscOpenRegisteredAsync(System.Net.IPAddress,System.Int32,System.Int32)">
+            <summary>
+            Generate an OscConnection for the specified DeviceID
+            Sender corresponding to Device ID needs to be registered
+            If generation fails, Null is returned.
+            </summary>
+            <param name="deviceIP">Device ID to be communicated</param>
+            <param name="controlTimeout">Timeout for control connection like a open/close</param>
+            <param name="dataTimeout">Timeout for a data connection</param>
+            <returns>Generated OscConnection</returns>
+        </member>
+        <member name="M:exiii.Library.IO.SharpOscManager.OscOpenAsync(System.Net.IPAddress,System.Net.IPAddress,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Generate an OscConnection for the specified DeviceID
+            Specify the IP address of the device
+            If generation fails, Null is returned.
+            </summary>
+            <param name="localIP">Specify the IP address of the host. If not specified, the IP address is automatically acquired</param>
+            <param name="deviceIP">IP address of Device to be communicated</param>
+            <param name="devicePort">Control port of Device to be communicated</param>
+            <param name="controlTimeout">Timeout for control connection like a open/close</param>
+            <param name="dataTimeout">Timeout for a data connection</param>
+            <returns>Generated OscConnection</returns>
+        </member>
+        <member name="M:exiii.Library.IO.SharpOscManager.OscCloseAsync(exiii.Library.IO.ICommandPort,System.Single,System.Boolean)">
+            <summary>
+            Close the OscConnection
+            </summary>
+            <param name="port">Target command port</param>
+            <param name="controlTimeout">Timeout for control connection like a open/close</param>
+            <param name="forceClose">Force closing when to fail to close-sequence</param>
+            <returns>Whether you could close the target</returns>
+        </member>
+        <member name="P:exiii.Library.IO.SharpOscManager.Disposed">
+            <summary>
+            Callback when disposed 
+            </summary>
+        </member>
+        <member name="M:exiii.Library.IO.SharpOscManager.Dispose(System.Boolean)">
+            <summary>
+            Implementation of IDisposable
+            </summary>
+        </member>
+        <member name="T:exiii.Library.IO.ReceiveMessage">
+            <summary>
+            Delegate to use receive callback of message receiving
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="T:exiii.Library.IO.SharpOscRecieverFacade">
+            <summary>
+            Facade class for easy use of OscReciever
+            </summary>
+        </member>
+        <member name="P:exiii.Library.IO.SharpOscRecieverFacade.LocalPort">
+            <summary>
+            Port number on your side
+            </summary>
+        </member>
+        <member name="M:exiii.Library.IO.SharpOscRecieverFacade.#ctor(System.Int32)">
+            <summary>
+            constructor
+            </summary>
+            <param name="localPort">Port number on your side</param>
+        </member>
+        <member name="M:exiii.Library.IO.SharpOscRecieverFacade.Attach(System.String,exiii.Library.IO.ReceiveMessage)">
+            <summary>
+            Add callback to manager
+            </summary>
+            <param name="address"></param>
+            <param name="callback"></param>
+        </member>
+        <member name="M:exiii.Library.IO.SharpOscRecieverFacade.Contain(System.String)">
+            <summary>
+            Check the address is contain in manager
+            </summary>
+            <param name="address"></param>
+            <returns></returns>
+        </member>
+        <member name="M:exiii.Library.IO.SharpOscRecieverFacade.Dettach(System.String)">
+            <summary>
+            Remove callback from manager
+            </summary>
+            <param name="address"></param>
+            <returns></returns>
+        </member>
+        <member name="M:exiii.Library.IO.SharpOscRecieverFacade.Dispose">
+            <summary>
+            Implementation of IDisposable
+            </summary>
+        </member>
+        <member name="M:exiii.Library.IO.SharpOscRecieverFacade.Dispose(System.Boolean)">
+            <summary>
+            Implementation of IDisposable
+            </summary>
+        </member>
+        <member name="T:exiii.Library.IO.SharpOscSenderFacade">
+            <summary>
+            Facade class for easy use of OscSender
+            </summary>
+        </member>
+        <member name="P:exiii.Library.IO.SharpOscSenderFacade.LocalIP">
+            <summary>
+            Your own IP address
+            </summary>
+        </member>
+        <member name="P:exiii.Library.IO.SharpOscSenderFacade.RemoteIP">
+            <summary>
+            IP address of the other party
+            </summary>
+        </member>
+        <member name="P:exiii.Library.IO.SharpOscSenderFacade.RemotePort">
+            <summary>
+            Port number of the other party
+            </summary>
+        </member>
+        <member name="M:exiii.Library.IO.SharpOscSenderFacade.#ctor(System.Net.IPAddress,System.Net.IPAddress,System.Int32)">
+            <summary>
+            constructor
+            </summary>
+            <param name="remoteIP">IP address of the other party</param>
+            <param name="remotePort">Port number of the other party</param>
+            <param name="localIP">Specify the IP address of the host. If not specified, the IP address is automatically acquired</param>
+        </member>
+        <member name="M:exiii.Library.IO.SharpOscSenderFacade.SendOsc(exiii.Library.OSC.OscMessage)">
+            <summary>
+            Send OscMessage
+            </summary>
+            <param name="message">Message to send</param>
+        </member>
+        <member name="M:exiii.Library.IO.SharpOscSenderFacade.Dispose(System.Boolean)">
+            <summary>
+            Implementation of IDisposable
+            </summary>
+            <param name="disposing"></param>
+        </member>
+        <member name="M:exiii.Library.IO.SharpOscSenderFacade.Dispose">
+            <summary>
+            Implementation of IDisposable
+            </summary>
+        </member>
+        <member name="T:exiii.Library.IO.SerialConnection">
+            <summary>
+            Performing serial communication as ICommandPort.
+            </summary>
+        </member>
+        <member name="F:exiii.Library.IO.SerialConnection.DefaultBaudRate">
+            <summary>
+            Default communication speed.
+            </summary>
+        </member>
+        <member name="P:exiii.Library.IO.SerialConnection.SerialDic">
+            <summary>
+            Collection containing list of instances of SerialConnection. Key is PortName.
+            </summary>
+        </member>
+        <member name="M:exiii.Library.IO.SerialConnection.GetSerialConnection(System.String,System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            Gets the SerialConnection of the specified portName.
+            </summary>
+            <param name="portName">Target port name. Like a "COM1".</param>
+            <param name="baudrate">baudrate</param>
+            <param name="timeout">Timeout for read/write.</param>
+            <param name="debug">flag for output debug log.</param>
+            <returns>The acquired SerialConnection. If connection can not be obtained, null is returned.</returns>
+        </member>
+        <member name="M:exiii.Library.IO.SerialConnection.GetSerialConnectionAsync(System.String,System.Int32,System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            Gets the SerialConnection of the specified portName.
+            </summary>
+            <param name="portName">Target port name. Like a "COM1".</param>
+            <param name="baudrate">baudrate.</param>
+            <param name="timeout">Time out for read/write.</param>
+            <param name="timeoutToOpen">Timeout for open.</param>
+            <param name="debug">flag for output debug log.</param>
+            <returns>The acquired SerialConnection. If connection can not be obtained, null is returned</returns>
+        </member>
+        <member name="M:exiii.Library.IO.SerialConnection.TryGetSerialConnection(exiii.Library.IO.SerialConnection@,System.String,System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            Gets the SerialConnection of the specified portName.
+            </summary>
+            <param name="connection">Output acquired SerialConnection.</param>
+            <param name="portName">Target port name. Like a "COM1".</param>
+            <param name="baudrate">baudrate.</param>
+            <param name="timeout">Timeout for read/write.</param>
+            <param name="debug">flag for output debug log.</param>
+            <returns>Whether acquisition succeeded or not</returns>
+        </member>
+        <member name="P:exiii.Library.IO.SerialConnection.Encoding">
+            <summary>
+            Encoding type using read text in serial connection.
+            </summary>
+        </member>
+        <member name="P:exiii.Library.IO.SerialConnection.DebugMode">
+            <summary>
+            Flag for debug output
+            </summary>
+        </member>
+        <member name="P:exiii.Library.IO.SerialConnection.Log">
+            <summary>
+            Retrieve Log sent from Device.
+            </summary>
+        </member>
+        <member name="P:exiii.Library.IO.SerialConnection.Serial">
+            <summary>
+            Serial port.
+            </summary>
+        </member>
+        <member name="P:exiii.Library.IO.SerialConnection.PortName">
+            <summary>
+            Name of serial port.
+            </summary>
+        </member>
+        <member name="P:exiii.Library.IO.SerialConnection.BaudRate">
+            <summary>
+            Serial port communication speed.
+            </summary>
+        </member>
+        <member name="P:exiii.Library.IO.SerialConnection.Timeout">
+            <summary>
+            Timeout [ms], using both of reading / writing.
+            </summary>
+        </member>
+        <member name="P:exiii.Library.IO.SerialConnection.ReadTimeout">
+            <summary>
+            Receive timeout [ms].
+            </summary>
+        </member>
+        <member name="P:exiii.Library.IO.SerialConnection.WriteTimeout">
+            <summary>
+            Send timeout [ms].
+            </summary>
+        </member>
+        <member name="P:exiii.Library.IO.SerialConnection.IsConnected">
+            <summary>
+            Flag indicating whether or not it is connected to the serial port.
+            </summary>
+        </member>
+        <member name="P:exiii.Library.IO.SerialConnection.IsPollingMode">
+            <summary>
+            If it is true, work with polling mode, or it is false, work with callback mode.
+            </summary>
+        </member>
+        <member name="P:exiii.Library.IO.SerialConnection.OnLogReceived">
+            <summary>
+            observable for log received.
+            </summary>
+        </member>
+        <member name="M:exiii.Library.IO.SerialConnection.#ctor(System.String,System.Int32,System.Int32,System.Threading.CancellationToken,System.Boolean)">
+            <summary>
+            constructor
+            </summary>
+            <param name="portName">Target port name. Like a "COM1".</param>
+            <param name="baudRate">baudrate</param>
+            <param name="timeout">Set timeout. Unit is ms.</param>
+            <param name="token"></param>
+            <param name="debug"></param>
+        </member>
+        <member name="M:exiii.Library.IO.SerialConnection.WriteCommand(System.Byte[])">
+            <summary>
+            Write command to serial port
+            </summary>
+            <param name="command">Byte sequence of command to be written</param>
+        </member>
+        <member name="M:exiii.Library.IO.SerialConnection.WriteCommand(exiii.Library.IO.Command)">
+            <summary>
+            Write command to serial port.
+            </summary>
+            <param name="command">Command to write.</param>
+        </member>
+        <member name="M:exiii.Library.IO.SerialConnection.TryReadCommand(exiii.Library.IO.Command@)">
+            <summary>
+            Read commands from serial port.
+            </summary>
+            <returns>Commands loaded.</returns>
+        </member>
+        <member name="M:exiii.Library.IO.SerialConnection.CheckRecieveCommand(System.Object,System.IO.Ports.SerialDataReceivedEventArgs)">
+            <summary>
+            Check if there is a received command and process it.
+            </summary>
+        </member>
+        <member name="M:exiii.Library.IO.SerialConnection.SendCommandAsync(exiii.Library.IO.Command)">
+            <summary>
+            Send a command async
+            </summary>
+            <param name="command">Command to send</param>
+            <returns>command returned</returns>
+        </member>
+        <member name="M:exiii.Library.IO.SerialConnection.SendCommandAsync(System.Collections.Generic.IEnumerable{exiii.Library.IO.Command})">
+            <summary>
+            Send a command async
+            </summary>
+            <param name="command">Command to send</param>
+            <returns>command returned</returns>
+        </member>
+        <member name="M:exiii.Library.IO.SerialConnection.Clear">
+            <summary>
+            Clear the contents of the send / receive buffer.
+            </summary>
+        </member>
+        <member name="M:exiii.Library.IO.SerialConnection.ResetOnRTS">
+            <summary>
+            Arduino compatible, reset by RTS signal.
+            </summary>
+        </member>
+        <member name="P:exiii.Library.IO.SerialConnection.Disposed">
+            <summary>
+            Callback when disposed .
+            </summary>
+        </member>
+        <member name="M:exiii.Library.IO.SerialConnection.Dispose(System.Boolean)">
+            <summary>
+            Implementation of IDisposable.
+            </summary>
+        </member>
+        <member name="T:exiii.Library.IO.SerialManager">
+            <summary>
+            Class for automatic connection of serial communication
+            </summary>
+        </member>
+        <member name="T:exiii.Library.IO.SerialManager.SerialName">
+            <summary>
+            Device name for identifying the device
+            </summary>
+        </member>
+        <member name="F:exiii.Library.IO.SerialManager.SerialName.U485">
+            <summary>
+            Futaba U 485
+            </summary>
+        </member>
+        <member name="F:exiii.Library.IO.SerialManager.SerialName.ESP32">
+            <summary>
+            ESP32
+            </summary>
+        </member>
+        <member name="M:exiii.Library.IO.SerialManager.SearchSerialConnectionAsync(exiii.Library.IO.MMDevice,System.Int32,System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            Perform automatic connection
+            </summary>
+            <param name="targetDevice">Device to be connected</param>
+            <param name="baudRate">Communication speed set value when connection is newly created</param>
+            <param name="timeout">Timeout setting value when connection is newly created</param>
+            <param name="timeoutToOpen"></param>
+            <param name="debug"></param>
+            <returns></returns>
+        </member>
+        <member name="M:exiii.Library.IO.SerialManager.SearchSerialConnectionAsync(System.Byte,System.Int32,System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            Perform automatic connection
+            </summary>
+            <param name="targetID">Device ID to be connected</param>
+            <param name="baudRate">Communication speed set value when connection is newly created</param>
+            <param name="timeout">Timeout setting value when connection is newly created</param>
+            <param name="timeoutToOpen"></param>
+            <param name="debug"></param>
+        </member>
+        <member name="M:exiii.Library.IO.SerialManager.SerialPortIsExsist(System.String)">
+            <summary>
+            Do check given port name is exist
+            </summary>
+            <param name="portName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:exiii.Library.IO.SerialManager.CallName(System.String)">
+            <summary>
+            The name for reading by human
+            </summary>
+            <param name="portName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:exiii.Library.IO.SerialManager.ExactName(System.String)">
+            <summary>
+            The name for managing by application
+            </summary>
+            <param name="portName"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -507864937, guid: ffd6288a208750f40b87d6359d79e402, type: 3}
+  m_Name: PhysicsParameter_Default
+  m_EditorClassIdentifier: 
+  m_Owner: {fileID: 11400000}
+  m_IsOriginal: 1
+  m_CalculationMode: 0
+  m_ForceMode: 2
+  m_UseFillter: 1
+  m_Stability: 3
+  m_MaxVelocityChange: 3
+  m_MaxAngularVelocityChange: 1

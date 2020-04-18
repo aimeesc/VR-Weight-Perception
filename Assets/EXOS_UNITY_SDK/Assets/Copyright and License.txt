@@ -1,0 +1,35 @@
+EXOS_SDK
+Copyright (c) exiii Inc.
+
+ViveInputUtility https://github.com/ViveSoftware/ViveInputUtility-Unity
+Copyright 2016-2018, HTC Corporation. All rights reserved.
+License https://github.com/ViveSoftware/ViveInputUtility-Unity/blob/develop/LICENSE
+
+The works ("Work") herein refer to the software developed or owned by 
+HTC Corporation ("HTC") under the terms of the license. The information 
+contained in the Work is the exclusive property of HTC. HTC grants the 
+legal user the right to use the Work within the scope of the legitimate 
+development of software. No further right is granted under this license, 
+including but not limited to, distribution, reproduction and 
+modification. Any other usage of the Works shall be subject to the 
+written consent of HTC.
+
+uOSC https://github.com/hecomi/uOSC
+Copyright (c) 2017 hecomi
+The MIT License (MIT) https://github.com/hecomi/uOSC#license
+
+UniRx https://github.com/neuecc/UniRx
+Copyright (c) 2018 Yoshifumi Kawai
+The MIT License (MIT) https://github.com/neuecc/UniRx/blob/master/LICENSE
+
+SharpOSC https://github.com/ValdemarOrn/SharpOSC
+Copyright (c) 2012 Valdemar Örn Erlingsson
+The MIT License (MIT) https://github.com/ValdemarOrn/SharpOSC/blob/master/License.txt
+
+System.Reactive https://www.nuget.org/packages/System.Reactive/
+Copyright (c) .NET Foundation and Contributors
+Apache License Version 2.0 https://github.com/dotnet/reactive/blob/master/LICENSE
+
+SuperCharactorController https://github.com/IronWarrior/SuperCharacterController
+Copyright (c) 2015 IronWarrior
+The MIT license (MIT) https://github.com/IronWarrior/SuperCharacterController/blob/master/LICENSE 

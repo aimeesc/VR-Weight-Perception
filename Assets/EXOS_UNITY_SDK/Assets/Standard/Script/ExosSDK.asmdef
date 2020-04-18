@@ -1,0 +1,10 @@
+{
+    "name": "ExosSDK",
+    "references": [
+        "ExosSDKUtility"
+    ],
+    "optionalUnityReferences": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false
+}

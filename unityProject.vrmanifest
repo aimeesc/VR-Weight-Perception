@@ -1,0 +1,16 @@
+{
+  "source": "Unity",
+  "applications": [
+    {
+      "app_key": "application.generated.unity.haptics2019.exe",
+      "launch_type": "url",
+      "url": "steam://launch/",
+      "action_manifest_path": "D:\\UFRGS\\Dissertação - háptica\\VR Weight Perception\\actions.json",
+      "strings": {
+        "en_us": {
+          "name": "VR Weight Perception [Testing]"
+        }
+      }
+    }
+  ]
+}

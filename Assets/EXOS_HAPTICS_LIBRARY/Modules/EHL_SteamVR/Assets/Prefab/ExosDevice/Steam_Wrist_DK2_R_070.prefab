@@ -1,0 +1,154 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1794964135468790}
+  m_IsPrefabParent: 1
+--- !u!1 &1794964135468790
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4960215181383826}
+  - component: {fileID: 114302909691783310}
+  - component: {fileID: 114546438626153962}
+  - component: {fileID: 114677458236104098}
+  - component: {fileID: 114175517958689540}
+  - component: {fileID: 114752283822073318}
+  - component: {fileID: 114995503566499680}
+  m_Layer: 0
+  m_Name: Steam_Wrist_DK2_R_070
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4960215181383826
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1794964135468790}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.5, y: 0.5, z: -0.2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114175517958689540
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1794964135468790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb85aa47c08749d4b88c8a084ef28cd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IsEnabled: 0
+  m_ExTags: []
+  m_Source: 6
+--- !u!114 &114302909691783310
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1794964135468790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fc4b11d6543c5d4eb2094284a887dc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IsEnabled: 0
+  m_ExTags: []
+--- !u!114 &114546438626153962
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1794964135468790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4780f890fd5fac246bcbd73ab8328b76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IsEnabled: 0
+  m_ExTags: []
+  m_PoseAction:
+    actionPath: /actions/default/in/Pose
+    needsReinit: 0
+  m_InputSource: 2
+  m_Origin: {fileID: 0}
+  m_BroadcastDeviceChanges: 1
+  m_Injected: 0
+--- !u!114 &114677458236104098
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1794964135468790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d96f48361347df94d994c17461711c67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IsEnabled: 0
+  m_ExTags: []
+  m_ExosPrefabs: []
+  m_TrackingParameter:
+    m_TrackingType: 0
+    m_TrackingPosition: 0
+    m_LRType: 0
+  m_PositionUpdateOnUpdate: 1
+  m_ManipulatorInChildren: []
+  m_PrefabInChildren: []
+--- !u!114 &114752283822073318
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1794964135468790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab49d6087c8319843bae08a46b552bc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UniqueID: 74901b9f-0a75-4dda-95a9-cbcaa71c22ff
+  m_Prefabs:
+  - {fileID: 1161443495731844, guid: e7c28985b6d8f1c48aa89c870dee45ca, type: 2}
+  - {fileID: 1390973919729634, guid: 2fb79d19970db9843bd9fc766bed3c9c, type: 2}
+  - {fileID: 1934758553152094, guid: f2137e3418b00de40a41ec3896e10f49, type: 2}
+  m_PrefabSets: []
+  m_Tags: []
+  m_LayerRecursive: 1
+--- !u!114 &114995503566499680
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1794964135468790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 745c709fa72c54347ba1044c1fe1fa15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IsEnabled: 0
+  m_ExTags: []
+  m_DetectionType: 0
+  m_Colliders: []
+  m_AutoSearchColliders: 1
+  m_ApplyListType: 1
+  m_ApplyList: 
+  m_Children: []
+  m_Oppsites: []

@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eac9a1f7fcc611d4cbb208750ef196ff, type: 3}
+  m_Name: DemoUICanvasSetting
+  m_EditorClassIdentifier: 
+  m_ExName: DemoUICanvasSetting
+  m_IsActive: 0
+  m_DefaultIndex: 0
+  m_Prefabs:
+  - {fileID: 114609445069955716, guid: 894feb63181c4fb44a6ad8e0ba263663, type: 2}
+  - {fileID: 114212290345894634, guid: 8665e06efb8a93943b972475a629fde5, type: 2}

@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f02becdab6308114c97dd5c42d1cc4a1, type: 3}
+  m_Name: EHLMaterialHolder
+  m_EditorClassIdentifier: 
+  m_AssetName: EHLMaterialHolder
+  m_Order: 10
+  m_FlushMaterial: {fileID: 2100000, guid: fd4d91d086984b7479189884b8b3bc32, type: 2}
+  m_ColorForContact: {r: 1, g: 0.5019608, b: 0, a: 0.5019608}
+  m_LerpInterval: 1
+  m_ColorGrid: {fileID: 2100000, guid: 4fcb9341d0515ee48af72c9d62994561, type: 2}
+  m_Transparent: {fileID: 2100000, guid: 4976412a12ac5fe439cd7d29db4ad427, type: 2}
+  m_Tools: {fileID: 13400000, guid: 15643138f85a1754896b0b5dc218d176, type: 2}

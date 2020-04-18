@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af6596f5a210abb44a2da7848d7daf0b, type: 3}
+  m_Name: ConnectionSerial
+  m_EditorClassIdentifier: 
+  m_ExName: ConnectionSerial
+  m_IsActive: 0
+  m_ConnectionEnabled: 1
+  m_ControlTimeout: 1000
+  m_DataTimeout: 200
+  m_RetryNumber: 2
+  m_DebugLog: 1
+  m_ComPortName: COMX
+  m_AutoDetection: 1
+  m_DetectedComPortName: COM3
+  m_BaudRate: 230400
+  m_DebugMode: 0

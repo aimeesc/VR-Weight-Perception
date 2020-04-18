@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 55aacf01b4c3a0b42bdcebdb7d8ed021
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - m_SheardPhysicalProperties: {fileID: 11400000, guid: f9e2eb79228ceae468ece573b36064e0,
+      type: 2}
+  - m_PhysicalProperties: {instanceID: 0}
+  - m_ShapeContainer: {instanceID: 0}
+  - m_SurfaceContainer: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

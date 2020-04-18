@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a98f5778d63908f4689665a7bf63b082, type: 3}
+  m_Name: TouchForceParameter_Wrist
+  m_EditorClassIdentifier: 
+  m_Owner: {fileID: 11400000}
+  m_IsOriginal: 1
+  m_ForceMaxDistance: 0.01
+  m_ForceGamma: 1
+  m_FillterGain: 1
+  m_RigidForceGain: 0

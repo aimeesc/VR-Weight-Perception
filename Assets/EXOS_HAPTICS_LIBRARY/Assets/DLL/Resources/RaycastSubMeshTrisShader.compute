@@ -1,0 +1,133 @@
+﻿#pragma kernel RaycastSubMeshTriangle
+
+RWStructuredBuffer<int> TrianglesBuffer;
+RWStructuredBuffer<float4> VerticesBuffer;
+int MaterialIndex;
+int XThreadLength;
+bool Inverse;
+float4 InvertRay;
+float4 W;
+float4 InitialPoint;
+float4 Normalized;
+
+const int VertexNumber = 3;
+
+struct TempHitInfo
+{
+	float Distance;
+	float4 Point;
+	int SubMeshIndex;
+	int SubMeshTriangleIndex;
+	bool Enable;
+};
+
+struct HitStruct
+{
+	float distance;
+	TempHitInfo tempHitInfo;
+};
+
+RWStructuredBuffer<HitStruct> ResultBuffer;
+
+float4 GetVertex(int triangleIndex, int triangleVertexIndex)
+{
+	return VerticesBuffer[TrianglesBuffer[triangleIndex * VertexNumber + triangleVertexIndex]];
+}
+
+TempHitInfo RaycastTriangle(float4 index0, float4 index1, float4 index2)
+{
+	TempHitInfo thi = (TempHitInfo)0;
+
+	float4 edgeU;
+	float4 edgeV;
+
+	if(Inverse)
+	{
+		edgeU = index2 - index0;
+		edgeV = index1 - index0;
+	}
+	else
+	{
+		edgeU = index1 - index0;
+		edgeV = index2 - index0;
+	}
+
+	float4x4 mat;
+	mat = float4x4(edgeU, edgeV, InvertRay, W);
+
+	float denominator = determinant(mat);
+
+	if(denominator <= 0)
+	{
+		thi.Enable = false;
+		return thi;
+	}
+
+	float4 D = InitialPoint - index0;
+
+	mat = float4x4(D, edgeV, InvertRay, W);
+	float u = determinant(mat);
+
+	if(u < 0 || denominator < u)
+	{
+		thi.Enable = false;
+		return thi;
+	}
+
+	mat = float4x4(edgeU, D, InvertRay, W);
+	float v = determinant(mat);
+
+	if(v < 0 || denominator < u + v)
+	{
+		thi.Enable = false;
+		return thi;
+	}
+
+	mat = float4x4(edgeU, edgeV, D, W);
+	float t = determinant(mat);
+
+	if(t < 0)
+	{
+		thi.Enable = false;
+		return thi;
+	}
+
+	float distance = t / denominator;
+	float4 pt = InitialPoint + Normalized * distance;
+
+	thi.Distance = distance;
+	thi.Point = pt;
+	thi.SubMeshIndex = MaterialIndex;
+	thi.SubMeshTriangleIndex = -1;
+	thi.Enable = true;
+
+	return thi;
+}
+
+[numthreads(500, 1, 1)]
+void RaycastSubMeshTriangle(int id : SV_DispatchThreadID)
+{
+	HitStruct result;
+
+	if(id < XThreadLength)
+	{
+		TempHitInfo hitInfo = RaycastTriangle(GetVertex(id, 0), GetVertex(id, 1), GetVertex(id, 2));
+
+		hitInfo.SubMeshTriangleIndex = id;
+
+		result.distance = hitInfo.Distance;
+		result.tempHitInfo = hitInfo;
+
+		ResultBuffer[id] = result;
+	}
+	else
+	{
+		TempHitInfo thi = (TempHitInfo)0;
+		thi.Enable = false;
+
+		result.distance = 0.0;
+		result.tempHitInfo = thi;
+
+		ResultBuffer[id] = result;
+	}
+}

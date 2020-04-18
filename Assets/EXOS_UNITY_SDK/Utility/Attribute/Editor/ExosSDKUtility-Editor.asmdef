@@ -1,0 +1,12 @@
+{
+    "name": "ExosSDKUtility-Editor",
+    "references": [
+        "ExosSDKUtility"
+    ],
+    "optionalUnityReferences": [],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false
+}
