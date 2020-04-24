@@ -128,7 +128,7 @@ namespace exiii.Unity.Sample
             }
 
             receiver.AddForceRatio(transform.position, m_ForceRatioVector);
-            Debug.Log("this is the force from exos" + m_ForceRatioVector);
+           // Debug.Log("this is the force from exos" + m_ForceRatioVector);
             m_PositionRatioVector = Vector3.MoveTowards(m_PositionRatioVector, positionRatioVector, moveLimit);
 
             //Debug.DrawLine(transform.position, transform.position + m_ForceRatioVector);
