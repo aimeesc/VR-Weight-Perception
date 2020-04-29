@@ -2,17 +2,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Valve.VR.InteractionSystem;
+using System.IO;
+using System;
+using System.Globalization;
+
 public class FirstExperiment : MonoBehaviour
 {
-    private int NUMCUBES = 4, MAXNUMTRIALS = 5, trialIndex;
+    private int NUMCUBES = 4, MAXNUMTRIALS = 15, trialIndex;
     public GameObject[] cubes;
-    public GameObject[] slots = new GameObject[4]; 
+    public GameObject[] slots = new GameObject[4];
     public GameObject cubePrefab;
     public Rigidbody[] rigidbodies;
-    private float offsetPosition;
-    Vector3 cubePosition;
+    private float offsetPosition, cronometer;
+    //Vector3 cubePosition;
+    private string answersPath, fileName, answerLine, inputObjects;
+    private float[] answers, tempWeights;
+    private float[,] orderedWeights, weights;
+    public int participantID;
+    private List<Vector3> cubePositions = new List<Vector3>(4);
+    private int[] positionIndex;
 
-    private float[] answers;
 
     /* equivalence from slots and weight
      * 0 = heavier
@@ -25,67 +34,139 @@ public class FirstExperiment : MonoBehaviour
     void Start()
     {
 
+        answersPath = @Application.dataPath + "/Answers/Exp1/";
+        fileName = answersPath + participantID + "-" + "-exp1-answers.csv";
+        int i = 0, j = 0;
         string cubeName;
         trialIndex = 0;
-        cubePosition = new Vector3(0.4324f, 1.1f, -0.309f); //TODO: change these values when the scene is ready
+        positionIndex = new int[4] { 0, 1, 2, 3 };
+        cubePositions.Add(Vector3.zero);
+        cubePositions.Add(Vector3.zero);
+        cubePositions.Add(Vector3.zero);
+        cubePositions.Add(Vector3.zero);
+
+        Debug.Log("Size of the list: " + cubePositions.Count);
+
+        shuffleArray();
+        setCubePositions();
+        
         offsetPosition = 0.0f;
         cubes = new GameObject[NUMCUBES];
         rigidbodies = new Rigidbody[NUMCUBES];
         answers = new float[NUMCUBES];
 
-        for (int i = 0; i < NUMCUBES; i++) {
+        orderedWeights = new float[15, NUMCUBES];
+        weights = new float[15, NUMCUBES]; 
+        tempWeights = new float[NUMCUBES];
+        inputObjects = File.ReadAllText(@Application.dataPath + "/Resources/objectsList.txt");
+
+
+        /* READ FORCES FROM THE OBJECT LIST*/
+        foreach (var row in inputObjects.Split('\n'))
+        {
+            //2 lines of the file are going to be read
+            if (i < 3) // there needs to be some calculation to find out which line of the file is going to be used3
+            {
+                j = 0;
+
+                //for each line, read the numbers on it into one position of the array
+                foreach (var col in row.Trim().Split(' '))
+                {
+                    tempWeights[j] = float.Parse(col, CultureInfo.InvariantCulture);
+                    j++;
+                }
+
+                //copy the values into the main matrix that contain the weights 
+                for (j = 0; j < NUMCUBES; j++)
+                {
+                    weights[i, j] = tempWeights[j];
+                }
+
+                //sort and reverse the values in the temporary array
+                Array.Sort(tempWeights); 
+                Array.Reverse(tempWeights);
+
+                //copy the values into the matrix that
+                for (j = 0; j<NUMCUBES; j++)
+                {
+                    orderedWeights[i, j] = tempWeights[j];
+                } 
+            }
+            i++;
+        }
+
+
+
+        for (i = 0; i < NUMCUBES; i++) {
 
             cubeName = "cube" + i;
-            Debug.Log("Creating new prefab");
-
+          //  Debug.Log("Creating new prefab");
             cubes[i] = Instantiate(cubePrefab, new Vector3(0, 0, 0), Quaternion.identity) as GameObject;
             cubes[i].name = cubeName;
             rigidbodies[i] = cubes[i].GetComponent<Rigidbody>();
-            rigidbodies[i].mass = 4.0f; // TODO: change this to the value of mass still TBD
-            cubes[i].transform.position = cubePosition;
-            cubePosition.x = cubePosition.x - 0.5f;
+            rigidbodies[i].mass = weights[trialIndex + (participantID*4),i]; // TODO: change this to the value of mass still TBD
+            cubes[i].transform.position = new Vector3(cubePositions[i].x, cubePositions[i].y, cubePositions[i].z);
 
         }
 
+        answerLine = participantID.ToString() + "," + trialIndex + ",";
+        writeOrderedVector(); //order the forces for the answer file
+        cronometer = 0.0f;
 
     }
 
 
+
+    void LateUpdate()
+    {
+        cronometer += Time.deltaTime;
+
+    }
+
     public void resetScene()
     {
+        shuffleArray();
+        setCubePositions();
+
         for (int i = 0; i < NUMCUBES; i++)
         {
             //reset the position
-            cubes[i].transform.position = cubePosition;
-            cubePosition.x = cubePosition.x - 0.5f;
+            cubes[i].transform.position = new Vector3(cubePositions[i].x, cubePositions[i].y, cubePositions[i].z);
 
             //change the mass
             rigidbodies[i] = cubes[i].GetComponent<Rigidbody>();
-            rigidbodies[i].mass = 4.0f; // TODO: change this to the value of mass still TBD
-
-
+            rigidbodies[i].mass = weights[trialIndex + (participantID*4), i]; // TODO: change this to the value of mass still TBD
+            
         }
+
+        answerLine = participantID.ToString() + "," + trialIndex + ",";
+        writeOrderedVector();
     }
 
     public void OnCustomButtonPress()
     {
 
-        if (canFinishTrial()) { 
+        if (canFinishTrial()) {
+            trialIndex++;
+
+            getAnswers();
+            writeAnswer();
 
             if (trialIndex < MAXNUMTRIALS)
             {
                 Debug.Log("We pushed our custom button!");
                 //save the answers
-                getAnswers();
+              
                 //reset the attributes
+                resetScene();
+                cronometer = 0.0f;
 
-                //increase the index
-                
-                trialIndex++;
             }
             else
             {
                 //end the test
+                UnityEditor.EditorApplication.isPlaying = false; //TODO: change to app quit
+
                 Debug.Log("end of the test");
             }
 
@@ -105,9 +186,11 @@ public class FirstExperiment : MonoBehaviour
             answers[i] = GameObject.Find(objName).GetComponent<Rigidbody>().mass; // for each cube, gets its mass
             Debug.Log("Answers");
             Debug.Log(i + " - " + answers[i]);
+            answerLine = answerLine + answers[i] + ",";
+
         }
-        
-        
+        answerLine = answerLine + cronometer.ToString("0.00", System.Globalization.CultureInfo.InvariantCulture);
+
     }
 
     public bool canFinishTrial()
@@ -119,5 +202,65 @@ public class FirstExperiment : MonoBehaviour
             
         }
         return true;
+    }
+
+
+
+    public void writeAnswer()
+    {
+
+        Debug.Log("I'm writing the answers");
+        FileStream fileStream = null;
+        fileStream = File.Open(fileName, File.Exists(fileName) ? FileMode.Append : FileMode.OpenOrCreate);
+
+        using (StreamWriter fs = new StreamWriter(fileStream))
+        {
+            fs.WriteLine(answerLine);
+        };
+
+        fileStream.Close();
+    }
+
+
+    public void writeOrderedVector()
+    {
+
+        for (int i = 0; i < NUMCUBES; i++)
+            answerLine = answerLine + orderedWeights[trialIndex + (participantID * 4), i] + ",";
+    }
+
+
+    public void shuffleArray()
+    {
+        int n = NUMCUBES;
+        System.Random rand = new System.Random();
+
+        for (int i = 0; i < n; i++)
+        {
+
+            swap(i, i + rand.Next(n-i));
+
+        }
+
+    }
+
+    public void swap(int a, int b)
+    {
+        int temp;
+        temp = positionIndex[a];
+        positionIndex[a] = positionIndex[b];
+        positionIndex[b] = temp;
+    }
+
+    public void setCubePositions()
+    {
+
+
+        for(int i = 0; i < NUMCUBES; i++)
+        {
+            cubePositions[positionIndex[i]] = new Vector3(0.4324f - (0.5f)*i, 2.1f, -0.309f); //TODO: change these values when the scene is ready
+        }
+
+        
     }
 }

@@ -8,6 +8,8 @@ public class DetectColision : MonoBehaviour
 
     private string objName;
     private bool isInSlot;
+
+
     void Start()
     {
         objName = " ";
