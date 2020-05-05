@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 114080354365243348}
   - component: {fileID: 114299791158866710}
   - component: {fileID: 114473756602902264}
-  - component: {fileID: 114748798025172080}
   - component: {fileID: 114883070598160432}
   - component: {fileID: 4622607433690185401}
+  - component: {fileID: 7723978064442156181}
   m_Layer: 0
   m_Name: Cube_Texture_Diamond
   m_TagString: Untagged
@@ -141,20 +141,6 @@ MonoBehaviour:
   m_PositionLimitRatio: 0.03
   m_PositionRatioVector: {x: 0, y: 0, z: 0}
   m_Collider: {fileID: 65711596495857438}
---- !u!114 &114748798025172080
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1150507273502242}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10aaa22ee08a4d64c8658db94862c735, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_VibrationParameter: {fileID: 11400000, guid: ed78d781ae0af5e4d9cf953293b753ff,
-    type: 2}
 --- !u!114 &114883070598160432
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -192,6 +178,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &7723978064442156181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1150507273502242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10aaa22ee08a4d64c8658db94862c735, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_VibrationParameter: {fileID: 11400000, guid: 78e3fc0a20af75043bbaa76d4292522d,
+    type: 2}
 --- !u!1 &1156268853746054
 GameObject:
   m_ObjectHideFlags: 0

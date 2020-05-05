@@ -36,7 +36,7 @@ public class FirstExperiment : MonoBehaviour
 
         answersPath = @Application.dataPath + "/Answers/Exp1/";
         fileName = answersPath + participantID + "-" + "-exp1-answers.csv";
-        int i = 0, j = 0;
+        int i = 0, j = 0, k = 0;
         string cubeName;
         trialIndex = 0;
         positionIndex = new int[4] { 0, 1, 2, 3 };
@@ -45,7 +45,6 @@ public class FirstExperiment : MonoBehaviour
         cubePositions.Add(Vector3.zero);
         cubePositions.Add(Vector3.zero);
 
-        Debug.Log("Size of the list: " + cubePositions.Count);
 
         shuffleArray();
         setCubePositions();
@@ -60,13 +59,12 @@ public class FirstExperiment : MonoBehaviour
         tempWeights = new float[NUMCUBES];
         inputObjects = File.ReadAllText(@Application.dataPath + "/Resources/objectsList.txt");
 
-
         /* READ FORCES FROM THE OBJECT LIST*/
         foreach (var row in inputObjects.Split('\n'))
         {
-            //2 lines of the file are going to be read
-            if (i < 3) // there needs to be some calculation to find out which line of the file is going to be used3
+            if (k >= (participantID * 15) && k < (participantID+1) * 15) // there needs to be some calculation to find out which line of the file is going to be used3
             {
+               // Debug.Log("Im k: " + k);
                 j = 0;
 
                 //for each line, read the numbers on it into one position of the array
@@ -90,9 +88,11 @@ public class FirstExperiment : MonoBehaviour
                 for (j = 0; j<NUMCUBES; j++)
                 {
                     orderedWeights[i, j] = tempWeights[j];
-                } 
+                }
+                i++;
+
             }
-            i++;
+            k++;
         }
 
 
@@ -100,11 +100,10 @@ public class FirstExperiment : MonoBehaviour
         for (i = 0; i < NUMCUBES; i++) {
 
             cubeName = "cube" + i;
-          //  Debug.Log("Creating new prefab");
             cubes[i] = Instantiate(cubePrefab, new Vector3(0, 0, 0), Quaternion.identity) as GameObject;
             cubes[i].name = cubeName;
             rigidbodies[i] = cubes[i].GetComponent<Rigidbody>();
-            rigidbodies[i].mass = weights[trialIndex + (participantID*4),i]; // TODO: change this to the value of mass still TBD
+            rigidbodies[i].mass = weights[trialIndex,i]; // TODO: change this to the value of mass still TBD
             cubes[i].transform.position = new Vector3(cubePositions[i].x, cubePositions[i].y, cubePositions[i].z);
 
         }
@@ -135,7 +134,7 @@ public class FirstExperiment : MonoBehaviour
 
             //change the mass
             rigidbodies[i] = cubes[i].GetComponent<Rigidbody>();
-            rigidbodies[i].mass = weights[trialIndex + (participantID*4), i]; // TODO: change this to the value of mass still TBD
+            rigidbodies[i].mass = weights[trialIndex, i]; // TODO: change this to the value of mass still TBD
             
         }
 
@@ -154,7 +153,6 @@ public class FirstExperiment : MonoBehaviour
 
             if (trialIndex < MAXNUMTRIALS)
             {
-                Debug.Log("We pushed our custom button!");
                 //save the answers
               
                 //reset the attributes
@@ -166,14 +164,12 @@ public class FirstExperiment : MonoBehaviour
             {
                 //end the test
                 UnityEditor.EditorApplication.isPlaying = false; //TODO: change to app quit
-
-                Debug.Log("end of the test");
             }
 
         }
         else
         {
-            Debug.Log("Can't finish de scene");
+           // Debug.Log("Can't finish de scene");
         }
     }
 
@@ -184,8 +180,8 @@ public class FirstExperiment : MonoBehaviour
         {
             objName = slots[i].GetComponent<DetectColision>().getObjectName(); // for each slot, gets the name of the cube placed on it
             answers[i] = GameObject.Find(objName).GetComponent<Rigidbody>().mass; // for each cube, gets its mass
-            Debug.Log("Answers");
-            Debug.Log(i + " - " + answers[i]);
+           // Debug.Log("Answers");
+          //  Debug.Log(i + " - " + answers[i]);
             answerLine = answerLine + answers[i] + ",";
 
         }
@@ -209,7 +205,7 @@ public class FirstExperiment : MonoBehaviour
     public void writeAnswer()
     {
 
-        Debug.Log("I'm writing the answers");
+       // Debug.Log("I'm writing the answers");
         FileStream fileStream = null;
         fileStream = File.Open(fileName, File.Exists(fileName) ? FileMode.Append : FileMode.OpenOrCreate);
 
