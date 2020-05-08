@@ -5,6 +5,7 @@ using Valve.VR.InteractionSystem;
 using System.IO;
 using System;
 using System.Globalization;
+using TMPro;
 
 public class FirstExperiment : MonoBehaviour
 {
@@ -21,7 +22,8 @@ public class FirstExperiment : MonoBehaviour
     public int participantID;
     private List<Vector3> cubePositions = new List<Vector3>(4);
     private int[] positionIndex;
-
+    public TextMeshPro timer;
+    private bool firstTrial;
 
     /* equivalence from slots and weight
      * 0 = heavier
@@ -111,7 +113,7 @@ public class FirstExperiment : MonoBehaviour
         answerLine = participantID.ToString() + "," + trialIndex + ",";
         writeOrderedVector(); //order the forces for the answer file
         cronometer = 0.0f;
-
+        firstTrial = true;
     }
 
 
@@ -119,6 +121,21 @@ public class FirstExperiment : MonoBehaviour
     void LateUpdate()
     {
         cronometer += Time.deltaTime;
+
+       
+        if(firstTrial && cronometer <= 40.0f)
+        {
+            timer.text = cronometer.ToString("0.00", System.Globalization.CultureInfo.InvariantCulture);
+        }else if(firstTrial && cronometer > 40.0f)
+        {
+            cronometer = 0.0f;
+            firstTrial = false;
+            timer.text = "Start!";
+
+        }else if(!firstTrial && cronometer > 15.0f)
+        {
+            timer.text = "";
+        }
 
     }
 
@@ -182,7 +199,7 @@ public class FirstExperiment : MonoBehaviour
             answers[i] = GameObject.Find(objName).GetComponent<Rigidbody>().mass; // for each cube, gets its mass
            // Debug.Log("Answers");
           //  Debug.Log(i + " - " + answers[i]);
-            answerLine = answerLine + answers[i] + ",";
+            answerLine = answerLine + answers[i].ToString("0.00", System.Globalization.CultureInfo.InvariantCulture) + ",";
 
         }
         answerLine = answerLine + cronometer.ToString("0.00", System.Globalization.CultureInfo.InvariantCulture);
@@ -222,7 +239,7 @@ public class FirstExperiment : MonoBehaviour
     {
 
         for (int i = 0; i < NUMCUBES; i++)
-            answerLine = answerLine + orderedWeights[trialIndex + (participantID * 4), i] + ",";
+            answerLine = answerLine + orderedWeights[trialIndex, i].ToString("0.00", System.Globalization.CultureInfo.InvariantCulture) + ",";
     }
 
 
@@ -254,7 +271,7 @@ public class FirstExperiment : MonoBehaviour
 
         for(int i = 0; i < NUMCUBES; i++)
         {
-            cubePositions[positionIndex[i]] = new Vector3(0.4324f - (0.5f)*i, 2.1f, -0.309f); //TODO: change these values when the scene is ready
+            cubePositions[positionIndex[i]] = new Vector3(0.590f - (0.3f)*i, 2.1f, -0.309f); //TODO: change these values when the scene is ready
         }
 
         

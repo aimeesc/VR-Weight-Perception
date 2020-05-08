@@ -19,13 +19,14 @@ public class SecondExperiment : MonoBehaviour
     private Rigidbody rigidbody;
     void Start()
     {
+        //TODO: adjust this positions when the object is defined
         //init the handle positions
         handlePositions = new List<Vector3>(3);
         handlePositions[0] = new Vector3(0.0f, 1.038f, 0.0f); //extreme right
-        handlePositions[1] = new Vector3(0.0f, 1.038f, 0.0f);
-        handlePositions[2] = new Vector3(0.0f, 1.038f, 0.0f);
-        handlePositions[3] = new Vector3(0.0f, 1.038f, 0.0f);
-        handlePositions[4] = new Vector3(0.0f, 1.038f, 0.0f);
+        handlePositions[1] = new Vector3(0.0f, 1.038f, 0.0f); //moderate right
+        handlePositions[2] = new Vector3(0.0f, 1.038f, 0.0f); //center right
+        handlePositions[3] = new Vector3(0.0f, 1.038f, 0.0f); //moderate left
+        handlePositions[4] = new Vector3(0.0f, 1.038f, 0.0f); //extreme left
 
         //change this when the weights are known
         heavy = 4.0f;
