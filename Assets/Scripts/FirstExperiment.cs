@@ -14,7 +14,7 @@ public class FirstExperiment : MonoBehaviour
     public GameObject[] slots = new GameObject[4];
     public GameObject cubePrefab;
     public Rigidbody[] rigidbodies;
-    private float offsetPosition, cronometer;
+    private float cronometer;
     //Vector3 cubePosition;
     private string answersPath, fileName, answerLine, inputObjects;
     private float[] answers, tempWeights;
@@ -51,7 +51,6 @@ public class FirstExperiment : MonoBehaviour
         shuffleArray();
         setCubePositions();
         
-        offsetPosition = 0.0f;
         cubes = new GameObject[NUMCUBES];
         rigidbodies = new Rigidbody[NUMCUBES];
         answers = new float[NUMCUBES];
