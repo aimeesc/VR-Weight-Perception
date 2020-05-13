@@ -33,15 +33,15 @@ public class SecondExperiment : MonoBehaviour
         //init the handle positions
 
         handlePositions = new List<Vector3>(5);
-        handlePositions.Add(new Vector3(0.0f, 0.9854f, 0.0f)); //extreme right
-        handlePositions.Add(new Vector3(0.489f, -0.550f, 0.0f)); //moderate right
-        handlePositions.Add(new Vector3(0.489f, -0.005f, 0.0f)); //center 
-        handlePositions.Add(new Vector3(0.489f, 0.550f, 0.0f)); //moderate left
-        handlePositions.Add(new Vector3(0.0f, -0.9854f, 0.0f)); //extreme left
+        handlePositions.Add(new Vector3(0.5f, 0.1f, -0.52f)); //extreme right
+        handlePositions.Add(new Vector3(0.25f, 0.1f, -0.52f)); //moderate right
+        handlePositions.Add(new Vector3(0.0f, 0.1f, -0.52f)); //center 
+        handlePositions.Add(new Vector3(-0.25f, 0.1f, -0.52f)); //moderate left
+        handlePositions.Add(new Vector3(-0.5f, -0.1f, -0.52f)); //extreme left
 
-        yesButtonPos = yesButton.transform.localPosition;
-        noButtonPos = noButton.transform.localPosition;
-        nextButtonPos = nextButton.transform.localPosition;
+        yesButtonPos = new Vector3(-0.3085f, 0.0334f, -1.051f);
+        noButtonPos = new Vector3(-0.3085f, 0.0334f, -1.051f);
+        nextButtonPos = new Vector3(-0.3085f, 0.0334f, -1.051f);//nextCylinder.transform.localPosition;
 
 
         positionIndex = new int[NUMPOSITIONS, 2];
@@ -65,16 +65,16 @@ public class SecondExperiment : MonoBehaviour
         trialIndex = 0;
         //canFinishScene = false;
         //capsule = Instantiate(capsulePrefab, capsulePosition, Quaternion.identity) as GameObject;
-        capsule = GameObject.Find("CapsuleObj");
+        capsule = GameObject.Find("Exos_cube");
         rigidbody = capsule.GetComponent<Rigidbody>();
         rigidbody.mass = first;
 
-        yesButton.SetActive(false);
-        noButton.SetActive(false);
+       // yesButton.SetActive(false);
+       // noButton.SetActive(false);
         cronometer = 0.0f;
         question.text = "";
         firstTrial = true;
-
+        isSecondObject = false;
     }
 
 
@@ -104,64 +104,79 @@ public class SecondExperiment : MonoBehaviour
 
     public void OnCustomButtonPress()
     {
+        if (!isSecondObject)
+        {
+            Debug.Log("Next button pressed");
+            answerLine = participantID.ToString() + "," + trialIndex + "," + heavy.ToString("0.00", System.Globalization.CultureInfo.InvariantCulture) + "," + 
+                                                                             light.ToString("0.00", System.Globalization.CultureInfo.InvariantCulture) + "," +
+                                                                             positionIndex[trialIndex, 0].ToString() + "," +
+                                                                             positionIndex[trialIndex, 1].ToString(); 
 
-        Debug.Log("Next button pressed");
-        answerLine = participantID.ToString() + "," + trialIndex + ","; // add the mass of the rigidbody
-        //change the mass and reset position
-        rigidbody.mass = second;
-        capsule.transform.position = capsulePosition;
-        handle.transform.localPosition = handlePositions[positionIndex[trialIndex, 1]];
+            // add the mass of the rigidbody
+                                                                            //change the mass and reset position
+            rigidbody.mass = second;
+            capsule.transform.position = capsulePosition;
+            handle.transform.localPosition = handlePositions[positionIndex[trialIndex, 1]];
 
-        //display yes and no buttons
-        yesButton.SetActive(true);
-        noButton.SetActive(true);
+            //display yes and no buttons
+            // yesButton.SetActive(true);
+            //noButton.SetActive(true);
 
 
-        //hide next object buttom
-        nextButton.SetActive(false);
-        question.text = "Is the previous object heavier than this one?";
-        nextButton.transform.localPosition = nextButtonPos;
-
+            //hide next object buttom
+            // nextButton.SetActive(false);
+            question.text = "Is the previous object heavier than this one?";
+            //nextCylinder.transform.localPosition = nextButtonPos;
+            isSecondObject = true;
+        }
     }
 
     public void OnYesButtonPress()
     {
+        if (isSecondObject) { 
+            //write the answers 
+            answerLine = answerLine  + "," + first.ToString("0.00", System.Globalization.CultureInfo.InvariantCulture) + "," + cronometer.ToString("0.00", System.Globalization.CultureInfo.InvariantCulture);
+            writeAnswer();
+            trialIndex++;
 
-        //write the answers 
-        answerLine = answerLine + heavy.ToString("0.00", System.Globalization.CultureInfo.InvariantCulture) + first.ToString("0.00", System.Globalization.CultureInfo.InvariantCulture) + cronometer.ToString("0.00", System.Globalization.CultureInfo.InvariantCulture);
-        writeAnswer();
-        trialIndex++;
+            if (trialIndex < MAXNUMTRIALS)
+            {
+                resetScene();
 
-        if (trialIndex < MAXNUMTRIALS)
-        {
-            resetScene();
-
+            }
+            else
+            {
+                UnityEditor.EditorApplication.isPlaying = false; 
+            }
+            isSecondObject = false;
         }
-        else
-        {
-            UnityEditor.EditorApplication.isPlaying = false; 
-        }
-       yesButton.transform.localPosition = yesButtonPos;
+        //yesCylinder.transform.localPosition = yesButtonPos;
 
     }
 
     public void OnNoButtonPress()
     {
-        //write the answers 
-        answerLine = answerLine + heavy.ToString("0.00", System.Globalization.CultureInfo.InvariantCulture) + second.ToString("0.00", System.Globalization.CultureInfo.InvariantCulture) + cronometer.ToString("0.00", System.Globalization.CultureInfo.InvariantCulture);
-        writeAnswer();
-        trialIndex++;
 
-        if (trialIndex < MAXNUMTRIALS)
+        if (isSecondObject)
         {
-            resetScene();
-        }
-        else
-        {
-            UnityEditor.EditorApplication.isPlaying = false;
+            //write the answers 
+            answerLine = answerLine + "," + second.ToString("0.00", System.Globalization.CultureInfo.InvariantCulture) + "," + cronometer.ToString("0.00", System.Globalization.CultureInfo.InvariantCulture);
+            writeAnswer();
+            trialIndex++;
+
+            if (trialIndex < MAXNUMTRIALS)
+            {
+                resetScene();
+            }
+            else
+            {
+                UnityEditor.EditorApplication.isPlaying = false;
+
+            }
+            isSecondObject = false;
 
         }
-        noButton.transform.localPosition = noButtonPos;
+        //noCylinder.transform.localPosition = noButtonPos;
 
     }
 
@@ -171,10 +186,10 @@ public class SecondExperiment : MonoBehaviour
 
         
         //hide yes and no buttom
-        yesButton.SetActive(false);
-        noButton.SetActive(false);
+       // yesButton.SetActive(false);
+        //noButton.SetActive(false);
 
-        nextButton.SetActive(true);
+        //nextButton.SetActive(true);
         question.text = "";
 
 
