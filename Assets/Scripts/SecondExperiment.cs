@@ -10,10 +10,9 @@ using TMPro;
 public class SecondExperiment : MonoBehaviour
 {
     private bool isSecondObject;
-    private int trialIndex, heavier, MAXNUMTRIALS = 5, NUMPOSITIONS = 20;
+    private int trialIndex, heavier, MAXNUMTRIALS = 20, NUMPOSITIONS = 20;
     public int participantID;
-    public GameObject capsulePrefab, handle, yesButton, noButton, nextButton, yesCylinder, noCylinder, nextCylinder;
-    private GameObject capsule;
+    public GameObject handle, yesButton, noButton, nextButton, yesCylinder, noCylinder, nextCylinder, capsule;
     private string answersPath, fileName, answerLine, inputObjects;
     private List<Vector3> handlePositions;
     private Vector3 capsulePosition;
@@ -26,18 +25,18 @@ public class SecondExperiment : MonoBehaviour
     private string input;
     private Vector3 yesButtonPos, noButtonPos, nextButtonPos;
 
-
+    private GameObject canvasChato;
     void Start()
     {
         //TODO: adjust this positions when the object is defined
         //init the handle positions
 
         handlePositions = new List<Vector3>(5);
-        handlePositions.Add(new Vector3(0.5f, 0.1f, -0.52f)); //extreme right
-        handlePositions.Add(new Vector3(0.25f, 0.1f, -0.52f)); //moderate right
-        handlePositions.Add(new Vector3(0.0f, 0.1f, -0.52f)); //center 
-        handlePositions.Add(new Vector3(-0.25f, 0.1f, -0.52f)); //moderate left
-        handlePositions.Add(new Vector3(-0.5f, -0.1f, -0.52f)); //extreme left
+        handlePositions.Add(new Vector3(0.0f, -1.0f, 0.00f)); //extreme right
+        handlePositions.Add(new Vector3(0.0f, -0.5f, 0.00f)); //moderate right
+        handlePositions.Add(new Vector3(0.0f, 0.0f, 0.00f)); //center 
+        handlePositions.Add(new Vector3(0.0f, 0.5f, 0.00f)); //moderate left
+        handlePositions.Add(new Vector3(0.0f, 1.0f, 0.00f)); //extreme left
 
         yesButtonPos = new Vector3(-0.3085f, 0.0334f, -1.051f);
         noButtonPos = new Vector3(-0.3085f, 0.0334f, -1.051f);
@@ -65,7 +64,7 @@ public class SecondExperiment : MonoBehaviour
         trialIndex = 0;
         //canFinishScene = false;
         //capsule = Instantiate(capsulePrefab, capsulePosition, Quaternion.identity) as GameObject;
-        capsule = GameObject.Find("Exos_cube");
+        //capsule = GameObject.Find("Exos_cylinder");
         rigidbody = capsule.GetComponent<Rigidbody>();
         rigidbody.mass = first;
 
@@ -75,6 +74,9 @@ public class SecondExperiment : MonoBehaviour
         question.text = "";
         firstTrial = true;
         isSecondObject = false;
+        canvasChato = GameObject.Find("[DebugWindow]");
+        canvasChato.SetActive(false);
+
     }
 
 
@@ -94,7 +96,7 @@ public class SecondExperiment : MonoBehaviour
             timer.text = "Start!";
 
         }
-        else if (!firstTrial && cronometer > 15.0f)
+        else if (!firstTrial)
         {
             timer.text = "";
         }
