@@ -1982,8 +1982,8 @@ MonoBehaviour:
   m_SheardPhysicalProperties: {fileID: 11400000, guid: 9be11e61609235a40ac6d6e14b8735ce,
     type: 2}
   m_PhysicalProperties: {fileID: 0}
-  m_ShapeContainer: {fileID: 1975257475}
-  m_SurfaceContainer: {fileID: 1975257475}
+  m_ShapeContainer: {fileID: 0}
+  m_SurfaceContainer: {fileID: 0}
   m_TouchManipulationEnabled: 1
   m_GripManipulationEnabled: 1
   m_GrabManipulationEnabled: 1
@@ -3309,18 +3309,6 @@ Transform:
   m_Father: {fileID: 693785153}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1975257475 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2298353149372215718, guid: 2a9e5fd192fd50641a88b8481060024c,
-    type: 3}
-  m_PrefabInstance: {fileID: 771179449}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8cdfd8be516110045999b61213824810, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1999291202
 GameObject:
   m_ObjectHideFlags: 0
