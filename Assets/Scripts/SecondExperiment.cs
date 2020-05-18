@@ -24,7 +24,7 @@ public class SecondExperiment : MonoBehaviour
     private bool firstTrial;
     private string input;
     private Vector3 yesButtonPos, noButtonPos, nextButtonPos;
-
+    private int isItRight;
     private GameObject canvasChato;
     void Start()
     {
@@ -111,8 +111,11 @@ public class SecondExperiment : MonoBehaviour
             Debug.Log("Next button pressed");
             answerLine = participantID.ToString() + "," + trialIndex + "," + heavy.ToString("0.00", System.Globalization.CultureInfo.InvariantCulture) + "," + 
                                                                              light.ToString("0.00", System.Globalization.CultureInfo.InvariantCulture) + "," +
+                                                                             first.ToString("0.00", System.Globalization.CultureInfo.InvariantCulture) + "," +
+                                                                             second.ToString("0.00", System.Globalization.CultureInfo.InvariantCulture) + "," +
                                                                              positionIndex[trialIndex, 0].ToString() + "," +
-                                                                             positionIndex[trialIndex, 1].ToString(); 
+                                                                             positionIndex[trialIndex, 1].ToString() 
+                                                                             ; 
 
             // add the mass of the rigidbody
                                                                             //change the mass and reset position
@@ -136,8 +139,19 @@ public class SecondExperiment : MonoBehaviour
     public void OnYesButtonPress()
     {
         if (isSecondObject) { 
+
+            if(first > second)
+            {
+                answerLine = answerLine + ",1";
+            }
+            else
+            {
+                answerLine = answerLine + ",0";
+
+            }
+
             //write the answers 
-            answerLine = answerLine  + "," + first.ToString("0.00", System.Globalization.CultureInfo.InvariantCulture) + "," + cronometer.ToString("0.00", System.Globalization.CultureInfo.InvariantCulture);
+            answerLine = answerLine  + ",1," + cronometer.ToString("0.00", System.Globalization.CultureInfo.InvariantCulture);
             writeAnswer();
             trialIndex++;
 
@@ -161,8 +175,20 @@ public class SecondExperiment : MonoBehaviour
 
         if (isSecondObject)
         {
+
+            if (first <= second)
+            {
+                answerLine = answerLine + ",1";
+            }
+            else
+            {
+                answerLine = answerLine + ",0";
+
+            }
+
+
             //write the answers 
-            answerLine = answerLine + "," + second.ToString("0.00", System.Globalization.CultureInfo.InvariantCulture) + "," + cronometer.ToString("0.00", System.Globalization.CultureInfo.InvariantCulture);
+            answerLine = answerLine +  ",0," + cronometer.ToString("0.00", System.Globalization.CultureInfo.InvariantCulture);
             writeAnswer();
             trialIndex++;
 
