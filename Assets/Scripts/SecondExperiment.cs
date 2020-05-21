@@ -16,6 +16,7 @@ public class SecondExperiment : MonoBehaviour
     private string answersPath, fileName, answerLine, inputObjects;
     private List<Vector3> handlePositions;
     private Vector3 capsulePosition;
+    private Quaternion capsuleRotation;
     private float heavy, light, first, second;
     private Rigidbody rigidbody;
     public TextMeshPro timer, question;
@@ -53,7 +54,8 @@ public class SecondExperiment : MonoBehaviour
        
         whichIsFirst();
        
-        capsulePosition = new Vector3(0.0035f, 1.1751f, -0.02f);
+        capsulePosition = new Vector3(0.217f, 0.962f, -0.049f);
+        capsuleRotation = capsule.transform.rotation;
         handle.transform.localPosition = handlePositions[positionIndex[trialIndex, 0]];
 
 
@@ -121,6 +123,7 @@ public class SecondExperiment : MonoBehaviour
                                                                             //change the mass and reset position
             rigidbody.mass = second;
             capsule.transform.position = capsulePosition;
+            capsule.transform.rotation = capsuleRotation;
             handle.transform.localPosition = handlePositions[positionIndex[trialIndex, 1]];
 
             //display yes and no buttons
@@ -223,6 +226,7 @@ public class SecondExperiment : MonoBehaviour
 
         //reset the position of the object
         capsule.transform.position = capsulePosition;
+        capsule.transform.rotation = capsuleRotation;
 
         //chooses randomly which is going to be the first object
         whichIsFirst();
